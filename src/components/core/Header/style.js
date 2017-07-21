@@ -10,7 +10,8 @@ export const HeaderWrapper = glamorous.div({
   boxSizing: 'border-box',
   display: 'flex',
   justifyContent: 'space-between',
-  padding: 10,
+  alignItems: 'center',
+  padding: '20px 10px',
 });
 
 export const LogoBold = glamorous.span({
