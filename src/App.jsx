@@ -11,6 +11,8 @@ import FontFaceObserver from 'fontfaceobserver';
 import Header from './components/core/Header/';
 import store from './configureStore';
 
+import ListSection from './components/animes/ListSection';
+
 const history = createHistory();
 
 const font = new FontFaceObserver('Open Sans');
@@ -38,7 +40,7 @@ export default class extends Component {
               <Header />
               <div style={{ height: 1000, paddingTop: 70 }}>
                 <Switch>
-                  <Route exact path={'/'} component={null} />
+                  <Route exact path={'/'} component={ListSection} />
                 </Switch>
               </div>
             </AppContainer>
