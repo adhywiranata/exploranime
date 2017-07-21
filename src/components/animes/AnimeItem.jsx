@@ -4,12 +4,19 @@ import glamorous from 'glamorous';
 import { PlainLink, Link } from '../core/Links';
 
 const ItemWrapper = glamorous.div({
-  margin: '10px 1%',
+  margin: '5px 1%',
   width: '48%',
   height: 'auto',
   borderRadius: 3,
   overflow: 'hidden',
-  backgroundColor: '#F5F5F5',
+  backgroundColor: '#FFFFFF',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  // border: '0.5px solid rgba(0,0,0,0.05)',
+  boxShadow: '0px 2px 4px -1px rgba(0,0,0,0.2)',
+  paddingBottom: 10,
 });
 
 const ItemCover = glamorous.img({
