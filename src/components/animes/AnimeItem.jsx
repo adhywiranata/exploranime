@@ -17,6 +17,12 @@ const ItemWrapper = glamorous.div({
   // border: '0.5px solid rgba(0,0,0,0.05)',
   boxShadow: '0px 2px 4px -1px rgba(0,0,0,0.2)',
   paddingBottom: 10,
+  '@media(min-width: 768px)': {
+    width: '22%',
+  },
+  '@media(min-width: 1200px)': {
+    width: '18%',
+  },
 });
 
 const ItemCover = glamorous.img({
