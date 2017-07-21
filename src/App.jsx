@@ -1,10 +1,17 @@
 // @flow
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
+import { Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
 import glamorous from 'glamorous';
 import FontFaceObserver from 'fontfaceobserver';
 
 import Header from './components/core/Header/';
+import store from './configureStore';
+
+const history = createHistory();
 
 const font = new FontFaceObserver('Open Sans');
 
@@ -21,17 +28,23 @@ const AppContainer = glamorous.div({
 export default class extends Component {
   render() {
     return (
-      <div>
-        <Helmet>
-          <title>Exploranime</title>
-        </Helmet>
-        <AppContainer>
-          <Header />
-          <div style={{ height: 1000 }}>
-            Exploranime
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <div>
+            <Helmet>
+              <title>Exploranime</title>
+            </Helmet>
+            <AppContainer>
+              <Header />
+              <div style={{ height: 1000, paddingTop: 70 }}>
+                <Switch>
+                  <Route exact path={'/'} component={null} />
+                </Switch>
+              </div>
+            </AppContainer>
           </div>
-        </AppContainer>
-      </div>
+        </ConnectedRouter>
+      </Provider>
     );
   }
 }
