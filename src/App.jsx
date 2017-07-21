@@ -27,7 +27,9 @@ export default class extends Component {
         </Helmet>
         <AppContainer>
           <Header />
-          Exploranime
+          <div style={{ height: 1000 }}>
+            Exploranime
+          </div>
         </AppContainer>
       </div>
     );
