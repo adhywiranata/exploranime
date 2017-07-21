@@ -1,7 +1,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 
-import { PlainLink, Link } from '../core/Link';
+import { PlainLink, Link } from '../core/Links';
 
 const ItemWrapper = glamorous.div({
   margin: '10px 1%',

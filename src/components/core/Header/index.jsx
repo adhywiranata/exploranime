@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PlainLink } from '../Link';
+import { PlainLink } from '../Links';
 import NavBurger from './navigation-hamburger.svg';
 import NavSearch from './navigation-search.svg';
 
