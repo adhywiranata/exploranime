@@ -26,6 +26,12 @@ export const ItemCover = glamorous.img({
   width: '100%',
 });
 
+export const Score = glamorous.span({
+  color: '#F4B350',
+  fontSize: '1.2rem',
+  fontWeight: '700',
+});
+
 const coverLoadingAnimation = () => {
   const gradientShift = css.keyframes({
     '0%': { backgroundPosition: '-82% 100%' },

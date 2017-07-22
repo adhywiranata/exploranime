@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ItemWrapper, ItemCover } from './style';
+import { ItemWrapper, ItemCover, Score } from './style';
 import { PlainLink, Link } from '../../core/Links';
 
 export default () => (
@@ -12,5 +12,6 @@ export default () => (
       />
     </PlainLink>
     <Link to={'/'}>One Piece</Link>
+    <Score>9.05</Score>
   </ItemWrapper>
 );
