@@ -5,6 +5,7 @@ export const HeaderWrapper = glamorous.div({
   // background: '-webkit-linear-gradient(to right, #3a6073, #3a7bd5)',
   background: 'linear-gradient(to right, #3a6073, #3a7bd5)', /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   position: 'fixed',
+  zIndex: 1,
   width: '100%',
   boxShadow: '0px 2px 6px 1px rgba(0,0,0,0.2)',
   boxSizing: 'border-box',
