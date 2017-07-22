@@ -3,6 +3,7 @@ import glamorous from 'glamorous';
 export const H1 = glamorous.h1({
   fontFamily: 'Open Sans',
   fontWeight: 300,
+  color: '#BBBBBB',
 });
 
 export const H2 = glamorous.h2({

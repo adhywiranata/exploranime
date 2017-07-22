@@ -4,16 +4,16 @@ import glamorous from 'glamorous';
 import AnimeItem from './AnimeItem';
 
 const ListWrapper = glamorous.div({
-  padding: 5,
+  padding: '0 5px',
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
   justifyContent: 'flex-start',
   '@media(min-width: 1200px)': {
-    padding: '5px 150px',
+    padding: '0px 150px',
   },
   '@media(min-width: 768px)': {
-    padding: '5px 80px',
+    padding: '0px 80px',
   },
 });
 
