@@ -1,6 +1,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 
+import AnimeItemLoading from './Item/Loading';
 import AnimeItem from './Item/Normal';
 
 const ListWrapper = glamorous.div({
@@ -20,6 +21,8 @@ const ListWrapper = glamorous.div({
 export default () => (
   <div>
     <ListWrapper>
+      <AnimeItemLoading />
+      <AnimeItemLoading />
       <AnimeItem />
       <AnimeItem />
       <AnimeItem />
