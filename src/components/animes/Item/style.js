@@ -10,12 +10,12 @@ export const ItemWrapper = glamorous.div({
   backgroundColor: '#FFFFFF',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'center',
+  justifyContent: 'space-between',
   alignItems: 'center',
   boxShadow: '0px 2px 4px -1px rgba(0,0,0,0.2)',
   paddingBottom: 10,
   '@media(min-width: 768px)': {
-    width: '22%',
+    width: '28%',
   },
   '@media(min-width: 1200px)': {
     width: '18%',
@@ -46,6 +46,12 @@ const coverLoadingAnimation = () => {
       #eee 33%
     )`,
     height: 230,
+    '@media(min-width: 768px)': {
+      height: 320,
+    },
+    '@media(min-width: 1200px)': {
+      height: 320,
+    },
     width: '200%',
     backgroundSize: '60% 100%',
     backgroundPosition: '-80% 100%',
