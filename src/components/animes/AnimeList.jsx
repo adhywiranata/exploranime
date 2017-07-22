@@ -1,7 +1,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 
-import AnimeItem from './AnimeItem';
+import AnimeItem from './Item/Normal';
 
 const ListWrapper = glamorous.div({
   padding: '0 5px',
