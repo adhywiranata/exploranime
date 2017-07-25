@@ -10,6 +10,6 @@ export default (): React$Element<any> => (
       <strong>Popular</strong>
       <span style={{ color: '#CCCCCC' }}>Animes</span>
     </H1>
-    <AnimeList />
+    <AnimeList animes={[1,2,3,4,5]} />
   </div>
 );

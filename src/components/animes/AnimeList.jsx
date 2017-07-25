@@ -19,7 +19,13 @@ const ListWrapper = glamorous.div({
   },
 });
 
-export default (): React$Element<any> => (
+
+type AnimesType = number[];
+type PropsType = {
+  animes: AnimesType,
+};
+
+export default ({ animes }: PropsType): React$Element<any> => (
   <div>
     <ListWrapper>
       <AnimeItemLoading />
