@@ -18,6 +18,7 @@
     "glamor": "^2.20.30",
     "glamorous": "^3.23.5",
     "history": "^4.6.3",
+    "immutable": "^3.8.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-helmet": "^5.1.3",
