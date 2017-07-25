@@ -1,8 +1,9 @@
+// @flow
 import React from 'react';
 
 import { ItemWrapper, ItemCoverLoading, ItemTitleWrapper, ItemScoreWrapper, ItemTitleLoading } from './style';
 
-export default () => (
+export default (): React$Element<any> => (
   <ItemWrapper>
     <ItemCoverLoading />
     <ItemTitleWrapper>

@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 
 import { PlainLink } from '../Links';
@@ -6,7 +7,7 @@ import NavSearch from './navigation-search.svg';
 
 import { HeaderWrapper, LogoBold, LogoReg } from './style';
 
-export default () => (
+export default (): React$Element<any> => (
   <HeaderWrapper>
     <img src={NavBurger} style={{ width: 30, height: 30 }} alt={'nav'} />
     <PlainLink to={'/'}>

@@ -28,7 +28,7 @@ const AppContainer = glamorous.div({
 });
 
 export default class extends Component {
-  render() {
+  render(): React$Element<any> {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>

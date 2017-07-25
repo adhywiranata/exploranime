@@ -1,3 +1,4 @@
+// @flow
 import { css } from 'glamor';
 import glamorous from 'glamorous';
 

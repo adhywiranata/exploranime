@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import glamorous from 'glamorous';
 
@@ -18,7 +19,7 @@ const ListWrapper = glamorous.div({
   },
 });
 
-export default () => (
+export default (): React$Element<any> => (
   <div>
     <ListWrapper>
       <AnimeItemLoading />

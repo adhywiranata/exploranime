@@ -1,3 +1,4 @@
+// @flow
 import glamorous from 'glamorous';
 import { Link as RouterLink } from 'react-router-dom';
 
