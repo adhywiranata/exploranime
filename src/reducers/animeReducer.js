@@ -1,6 +1,13 @@
 // @flow
+type Anime = {
+  id: number,
+  title: string,
+  description: string,
+  imageUrl: string,
+};
+
 type AnimeStateType = {
-  animesData: number[],
+  animesData: Anime[],
   isFetching: boolean,
 };
 
