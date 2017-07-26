@@ -23,3 +23,7 @@ export default (
 export const getAllAnimes = (animesState: AnimeStateType) => {
   return animesState.get('animesData').toArray().map(obj => obj.toObject());
 };
+
+export const getFetchingStatus = (animesState: AnimeStateType) => {
+  return animesState.get('isFetching');
+};
