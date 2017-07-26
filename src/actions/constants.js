@@ -1,0 +1,1 @@
+export FETCH_ANIMES = 'FETCH_ANIMES;
