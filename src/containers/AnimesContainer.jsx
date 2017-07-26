@@ -18,7 +18,7 @@ export default connect(
 )(
   class extends React.Component {
     render() {
-      const animes, isFetching = { this.props };
+      const { animes, isFetching } = this.props;
       return (
         <AnimeList animes={animes} isFetching={isFetching} />
       );
