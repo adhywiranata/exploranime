@@ -30,14 +30,7 @@ export default ({ animes }: PropsType): React$Element<any> => (
     <ListWrapper>
       <AnimeItemLoading />
       <AnimeItemLoading />
-      <AnimeItem />
-      <AnimeItem />
-      <AnimeItem />
-      <AnimeItem />
-      <AnimeItem />
-      <AnimeItem />
-      <AnimeItem />
-      <AnimeItem />
+      {animes.map(anime => <AnimeItem key={anime.id} {...anime} />)}
     </ListWrapper>
   </div>
 );

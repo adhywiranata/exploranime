@@ -29,7 +29,11 @@ export default (
   state: ?AnimeStateType = initialState,
   action: ActionCreatorType,
 ): ?AnimeStateType => {
-  switch (action.type) {
+  switch (action) {
     default: return state;
   }
+};
+
+export const getAllAnimes = (animesState) => {
+  return animesState.get('animesData').toArray().map(obj => obj.toObject());
 };
