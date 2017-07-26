@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 
+import AnimesContainer from '../../containers/AnimesContainer';
 import { H1 } from '../core/TextHeadings';
-import AnimeList from './AnimeList';
 
 export default (): React$Element<any> => (
   <div style={{ padding: '0 10px', display: 'flex', flexDirection: 'column' }}>
@@ -10,6 +10,6 @@ export default (): React$Element<any> => (
       <strong>Popular</strong>
       <span style={{ color: '#CCCCCC' }}>Animes</span>
     </H1>
-    <AnimeList animes={[1,2,3,4,5]} />
+    <AnimesContainer />
   </div>
 );
