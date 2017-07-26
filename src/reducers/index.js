@@ -4,7 +4,7 @@ import { routerReducer } from 'react-router-redux';
 
 import animeReducer from './animeReducer';
 
-export default (): React$Element<any> => combineReducers({
+export default (): any => combineReducers({
   router: routerReducer,
   animes: animeReducer,
 });
