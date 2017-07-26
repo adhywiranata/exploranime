@@ -14,7 +14,10 @@ const initialState = {
   isFetching: false,
 };
 
-export default (state: ?animeStateType = initialState, action: actionCreatorType) => {
+export default (
+  state: ?animeStateType = initialState,
+  action: actionCreatorType
+): ?animeStateType => {
   switch (action.type) {
     default: return state;
   }
