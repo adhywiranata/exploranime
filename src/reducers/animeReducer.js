@@ -1,21 +1,7 @@
 // @flow
 import { fromJS } from 'immutable';
 
-type Anime = {
-  id: number,
-  title: string,
-  description: string,
-  imageUrl: string,
-};
-
-type AnimeStateType = {
-  animesData: Anime[],
-  isFetching: boolean,
-};
-
-type ActionCreatorType = {
-  type: string,
-};
+import type { AnimeStateType, ActionCreatorType } from '../types/animeTypes';
 
 const initialState = fromJS({
   animesData: [
