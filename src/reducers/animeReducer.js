@@ -1,11 +1,10 @@
 // @flow
-
-type animeStateType = {
+type AnimeStateType = {
   animesData: number[],
   isFetching: boolean,
 };
 
-type actionCreatorType = {
+type ActionCreatorType = {
   type: string,
 };
 
@@ -15,9 +14,9 @@ const initialState = {
 };
 
 export default (
-  state: ?animeStateType = initialState,
-  action: actionCreatorType
-): ?animeStateType => {
+  state: ?AnimeStateType = initialState,
+  action: ActionCreatorType,
+): ?AnimeStateType => {
   switch (action.type) {
     default: return state;
   }
