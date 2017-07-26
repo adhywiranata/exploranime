@@ -11,7 +11,8 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "flow-bin": "^0.50.0",
-    "react-scripts": "1.0.10"
+    "react-scripts": "1.0.10",
+    "react-snapshot": "^1.1.0"
   },
   "dependencies": {
     "fontfaceobserver": "^2.0.13",
@@ -31,7 +32,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && react-snapshot",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
