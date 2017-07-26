@@ -1,7 +1,12 @@
 [ignore]
+.*/node_modules
+.*/public
+.*/build
+./package.json
+./yarn.lock
+./README.md
 
 [include]
-src
 
 [libs]
 
