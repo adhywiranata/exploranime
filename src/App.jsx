@@ -38,7 +38,7 @@ export default class extends Component {
             </Helmet>
             <AppContainer>
               <Header />
-              <div style={{ height: 1000, paddingTop: 50 }}>
+              <div style={{ height: 'auto', paddingTop: 50 }}>
                 <Switch>
                   <Route exact path={'/'} component={ListSection} />
                 </Switch>
