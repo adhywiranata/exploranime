@@ -5,6 +5,8 @@ import glamorous from 'glamorous';
 import AnimeItemLoading from './Item/Loading';
 import AnimeItem from './Item/Normal';
 
+import type { AnimeStateType } from '../../types/animeTypes';
+
 const ListWrapper = glamorous.div({
   padding: '0 5px',
   display: 'flex',
@@ -19,14 +21,7 @@ const ListWrapper = glamorous.div({
   },
 });
 
-
-type AnimesType = number[];
-type PropsType = {
-  animes: AnimesType,
-  isFetching: boolean,
-};
-
-export default ({ animes, isFetching }: PropsType): React$Element<any> => (
+export default ({ animesData, isFetching }: AnimeStateType): React$Element<any> => (
   <div>
 
     {isFetching && (
@@ -37,7 +32,7 @@ export default ({ animes, isFetching }: PropsType): React$Element<any> => (
     )}
     {!isFetching && (
       <ListWrapper>
-        {animes.map(anime => <AnimeItem key={anime.id} {...anime} />)}
+        {animesData.map(anime => <AnimeItem key={anime.id} {...anime} />)}
       </ListWrapper>
     )}
   </div>

@@ -1,5 +1,4 @@
 // @flow
-
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -29,7 +28,7 @@ export default connect(
     render() {
       const { animes, isFetching } = this.props;
       return (
-        <AnimeList animes={animes} isFetching={isFetching} />
+        <AnimeList animesData={animes} isFetching={isFetching} />
       );
     }
 })
