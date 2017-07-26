@@ -23,14 +23,22 @@ const ListWrapper = glamorous.div({
 type AnimesType = number[];
 type PropsType = {
   animes: AnimesType,
+  isFetching: boolean,
 };
 
-export default ({ animes }: PropsType): React$Element<any> => (
+export default ({ animes, isFetching }: PropsType): React$Element<any> => (
   <div>
-    <ListWrapper>
-      <AnimeItemLoading />
-      <AnimeItemLoading />
-      {animes.map(anime => <AnimeItem key={anime.id} {...anime} />)}
-    </ListWrapper>
+
+    {isFetching && (
+      <ListWrapper>
+        <AnimeItemLoading />
+        <AnimeItemLoading />
+      </ListWrapper>
+    )}
+    {!isFetching && (
+      <ListWrapper>
+        {animes.map(anime => <AnimeItem key={anime.id} {...anime} />)}
+      </ListWrapper>
+    )}
   </div>
 );
