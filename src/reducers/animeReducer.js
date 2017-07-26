@@ -25,8 +25,6 @@ const initialState: AnimeStateType = fromJS({
   isFetching: false,
 });
 
-console.log(initialState);
-
 export default (
   state: ?AnimeStateType = initialState,
   action: ActionCreatorType,
