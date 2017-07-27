@@ -5,41 +5,44 @@ import { FETCH_ANIMES_LOADING, FETCH_ANIMES_SUCCESS } from '../actions/constants
 import type { AnimeStateType, ActionCreatorType } from '../types/animeTypes';
 
 const initialState = fromJS({
-  animesData: [
-    {
-      id: 1,
-      title: 'One Piece',
-      description: 'wow',
-      imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
-    },
-    {
-      id: 2,
-      title: 'Piece One',
-      description: 'test',
-      imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
-    },
-    {
-      id: 3,
-      title: 'One One',
-      description: 'oke',
-      imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
-    },
-    {
-      id: 4,
-      title: 'Piece Piece',
-      description: 'yeah',
-      imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
-    },
-  ],
+  animesData: [],
   isFetching: false,
 });
+
+const datasToFetch = fromJS([
+  {
+    id: 1,
+    title: 'One Piece',
+    description: 'wow',
+    imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
+  },
+  {
+    id: 2,
+    title: 'Piece One',
+    description: 'test',
+    imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
+  },
+  {
+    id: 3,
+    title: 'One One',
+    description: 'oke',
+    imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
+  },
+  {
+    id: 4,
+    title: 'Piece Piece',
+    description: 'yeah',
+    imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
+  },
+]);
 
 const fetchAnimesLoading = (state) => {
   return state.set('isFetching', true);
 };
 
 const fetchAnimesSuccess = (state) => {
-  return state.set('isFetching', false);
+  const newAnimesData = state.get('animesData').concat(datasToFetch);
+  return state.set('isFetching', false).set('animesData', newAnimesData);
 };
 
 export default (
