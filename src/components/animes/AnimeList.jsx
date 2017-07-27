@@ -24,7 +24,7 @@ const ListWrapper = glamorous.div({
 export default ({ animesData, isFetching }: AnimeStateType): React$Element<any> => (
   <div>
     <ListWrapper>
-      {animesData.map(anime => <AnimeItem key={anime.id} {...anime} />)}
+      {animesData.map((anime, index) => <AnimeItem key={index} {...anime} />)}
     </ListWrapper>
     {isFetching && (
       <ListWrapper>

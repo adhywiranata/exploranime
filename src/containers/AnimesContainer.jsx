@@ -23,6 +23,24 @@ export default connect(
   mapDispatchToProps,
 )(
   class extends React.Component {
+    constructor(props) {
+      super(props);
+      document.addEventListener('scroll', () => {
+        // console.log(document.body.height);
+        // console.log(document.getElementsByTagName('body')[0].height);
+        // console.log(window.innerHeight);
+        const documentHeight = document.body.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const scrollY = document.body.scrollTop;
+
+        if(documentHeight === windowHeight + scrollY) {
+          console.log('FETCHING...');
+          this.props.fetchAnimesLoading();
+          this.props.fetchAnimesSuccess();
+        }
+      });
+    }
+
     componentDidMount() {
       this.props.fetchAnimesLoading();
       setTimeout(this.props.fetchAnimesSuccess, 3000);
