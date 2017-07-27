@@ -29,7 +29,7 @@ export const ItemCover = glamorous.img({
 
 export const Score = glamorous.span({
   color: '#F4B350',
-  fontSize: '1.2rem',
+  fontSize: '1.7rem',
   fontWeight: '700',
 });
 

@@ -13,8 +13,12 @@ export default ({ attributes }): React$Element<any> => {
         alt={attributes.titles.en}
       />
     </PlainLink>
-    <Link to={'/'}>{attributes.titles.en}</Link>
-    <Score>9.05</Score>
+    <div style={{ height: 100, padding: '0 20px', display: 'flex', flexDirection: 'column', alignItems: 'center' , justifyContents: 'space-between' }}>
+      <Link to={'/'} style={{ fontSize: '0.8rem', textAlign: 'center', flex: 1 }}>
+        {attributes.titles.en === '' ? attributes.titles.en : attributes.titles.en_jp }
+      </Link>
+      <Score style={{ flex: 1 }}>9.05</Score>
+    </div>
   </ItemWrapper>
 );
 }
