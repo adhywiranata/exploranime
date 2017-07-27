@@ -25,7 +25,8 @@ font.load().then(() => {
 });
 
 const AppContainer = glamorous.div({
-  fontFamily: 'Open Sans'
+  fontFamily: 'Open Sans',
+  position: 'relative',
 });
 
 export default class extends Component {
@@ -39,7 +40,7 @@ export default class extends Component {
             </Helmet>
             <AppContainer>
               <Header />
-              <div style={{ height: 'auto', paddingTop: 50 }}>
+              <div style={{ height: 'auto', paddingTop: 50, paddingBottom: 50 }}>
                 <Switch>
                   <Route exact path={'/'} component={ListSection} />
                 </Switch>
