@@ -6,15 +6,30 @@ import type { AnimeStateType, ActionCreatorType } from '../types/animeTypes';
 
 const initialState = fromJS({
   animesData: [
-    { id: 1, title: 'One Piece', description: '', imageUrl: '' },
-    { id: 2, title: 'Senki Senki', description: '', imageUrl: '' },
-    { id: 3, title: 'Senki Senki', description: '', imageUrl: '' },
-    { id: 4, title: 'Senki Senki', description: '', imageUrl: '' },
-    { id: 5, title: 'Senki Senki', description: '', imageUrl: '' },
-    { id: 6, title: 'Senki Senki', description: '', imageUrl: '' },
-    { id: 7, title: 'Senki Senki', description: '', imageUrl: '' },
-    { id: 8, title: 'Senki Senki', description: '', imageUrl: '' },
-    { id: 9, title: 'Senki Senki', description: '', imageUrl: '' },
+    {
+      id: 1,
+      title: 'One Piece',
+      description: 'wow',
+      imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
+    },
+    {
+      id: 2,
+      title: 'Piece One',
+      description: 'test',
+      imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
+    },
+    {
+      id: 3,
+      title: 'One One',
+      description: 'oke',
+      imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
+    },
+    {
+      id: 4,
+      title: 'Piece Piece',
+      description: 'yeah',
+      imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
+    },
   ],
   isFetching: false,
 });
