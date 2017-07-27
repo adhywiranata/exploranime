@@ -8,8 +8,9 @@ export const fetchAnimesLoading = () => ({
   type: FETCH_ANIMES_LOADING,
 });
 
-export const fetchAnimesSuccess = () => ({
+export const fetchAnimesSuccess = animesData => ({
   type: FETCH_ANIMES_SUCCESS,
+  payload: animesData,
 });
 
 export const fetchAnimesFailure = () => ({

@@ -16,7 +16,7 @@ export function* fetchAnimes() {
   yield put(fetchAnimesLoadingActionCreator());
   try {
     const animesData = yield call(fetchKitsuAnimesPaginated);
-    yield put(fetchAnimesSuccessActionCreator(animesData));
+    yield put(fetchAnimesSuccessActionCreator(animesData.data));
   } catch (e) {
     yield put(fetchAnimesFailureActionCreator());
   }
