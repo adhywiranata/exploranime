@@ -28,6 +28,8 @@ export default ({ animesData, isFetching }: AnimeStateType): React$Element<any> 
       <ListWrapper>
         <AnimeItemLoading />
         <AnimeItemLoading />
+        <AnimeItemLoading />
+        <AnimeItemLoading />
       </ListWrapper>
     )}
     {!isFetching && (

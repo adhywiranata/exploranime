@@ -1,7 +1,7 @@
 // @flow
 import { fromJS } from 'immutable';
 
-import { FETCH_ANIMES } from '../actions/constants';
+import { FETCH_ANIMES_LOADING, FETCH_ANIMES_SUCCESS } from '../actions/constants';
 import type { AnimeStateType, ActionCreatorType } from '../types/animeTypes';
 
 const initialState = fromJS({
@@ -34,8 +34,12 @@ const initialState = fromJS({
   isFetching: false,
 });
 
-const fetchAnimes = (state) => {
+const fetchAnimesLoading = (state) => {
   return state.set('isFetching', true);
+};
+
+const fetchAnimesSuccess = (state) => {
+  return state.set('isFetching', false);
 };
 
 export default (
@@ -43,7 +47,8 @@ export default (
   action: ActionCreatorType,
 ): ?AnimeStateType => {
   switch (action.type) {
-    case FETCH_ANIMES: return fetchAnimes(state);
+    case FETCH_ANIMES_LOADING: return fetchAnimesLoading(state);
+    case FETCH_ANIMES_SUCCESS: return fetchAnimesSuccess(state);
     default: return state;
   }
 };
