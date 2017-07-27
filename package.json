@@ -28,7 +28,8 @@
     "react-router-dom": "^4.1.2",
     "react-router-redux": "next",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.15.6"
   },
   "scripts": {
     "start": "react-scripts start",

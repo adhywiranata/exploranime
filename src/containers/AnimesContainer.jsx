@@ -14,8 +14,8 @@ const mapStateToProps = ({ animes }) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchAnimes: () => dispatch(fetchAnimes()),
-  fetchAnimesLoading: () => dispatch(fetchAnimesLoading()),
-  fetchAnimesSuccess: () => dispatch(fetchAnimesSuccess()),
+  // fetchAnimesLoading: () => dispatch(fetchAnimesLoading()),
+  // fetchAnimesSuccess: () => dispatch(fetchAnimesSuccess()),
 });
 
 export default connect(
@@ -34,16 +34,14 @@ export default connect(
         const scrollY = document.body.scrollTop;
 
         if(documentHeight === windowHeight + scrollY) {
-          console.log('FETCHING...');
-          this.props.fetchAnimesLoading();
-          this.props.fetchAnimesSuccess();
+          // console.log('FETCHING...');
+          // this.props.fetchAnimes();
         }
       });
     }
 
     componentDidMount() {
-      this.props.fetchAnimesLoading();
-      setTimeout(this.props.fetchAnimesSuccess, 3000);
+      this.props.fetchAnimes();
     }
 
     render() {
