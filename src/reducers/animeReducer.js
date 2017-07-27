@@ -58,6 +58,18 @@ const datasToFetch = fromJS([
     description: 'yeah',
     imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
   },
+  {
+    id: 9,
+    title: 'One One',
+    description: 'oke',
+    imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
+  },
+  {
+    id: 10,
+    title: 'Piece Piece',
+    description: 'yeah',
+    imageUrl: 'https://media.kitsu.io/anime/poster_images/12/small.jpg?1490541434',
+  },
 ]);
 
 const fetchAnimesLoading = (state) => {

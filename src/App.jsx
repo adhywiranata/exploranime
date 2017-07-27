@@ -27,6 +27,7 @@ font.load().then(() => {
 const AppContainer = glamorous.div({
   fontFamily: 'Open Sans',
   position: 'relative',
+  minHeight: '100vh',
 });
 
 export default class extends Component {

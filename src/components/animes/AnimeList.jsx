@@ -36,6 +36,8 @@ export default ({ animesData, isFetching }: AnimeStateType): React$Element<any> 
         <AnimeItemLoading />
         <AnimeItemLoading />
         <AnimeItemLoading />
+        <AnimeItemLoading />
+        <AnimeItemLoading />
       </ListWrapper>
     )}
   </div>
