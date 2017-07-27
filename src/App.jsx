@@ -9,6 +9,7 @@ import glamorous from 'glamorous';
 import FontFaceObserver from 'fontfaceobserver';
 
 import Header from './components/core/Header/';
+import Footer from './components/core/Footer/';
 import store from './configureStore';
 
 import ListSection from './components/animes/ListSection';
@@ -43,6 +44,7 @@ export default class extends Component {
                   <Route exact path={'/'} component={ListSection} />
                 </Switch>
               </div>
+              <Footer />
             </AppContainer>
           </div>
         </ConnectedRouter>
