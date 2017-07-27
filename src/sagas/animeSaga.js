@@ -2,6 +2,8 @@ import { put, call, takeEvery } from 'redux-saga/effects';
 
 import {
   fetchAnimesLoading as fetchAnimesLoadingActionCreator,
+  fetchAnimesSuccess as fetchAnimesSuccessActionCreator,
+  fetchAnimesFailure as fetchAnimesFailureActionCreator,
 } from '../actions/animeActions';
 
 import { FETCH_ANIMES } from '../actions/constants';
@@ -9,9 +11,9 @@ import { FETCH_ANIMES } from '../actions/constants';
 export function* fetchAnimes() {
   yield put(fetchAnimesLoadingActionCreator());
   try {
-    // do
-  } catch(e) {
-    // do
+    yield put(fetchAnimesSuccessActionCreator());
+  } catch (e) {
+    yield put(fetchAnimesFailureActionCreator());
   }
 }
 
