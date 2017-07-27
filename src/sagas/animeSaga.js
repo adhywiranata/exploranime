@@ -6,12 +6,17 @@ import {
   fetchAnimesFailure as fetchAnimesFailureActionCreator,
 } from '../actions/animeActions';
 
+import {
+  fetchKitsuAnimesPaginated,
+} from '../config/apis';
+
 import { FETCH_ANIMES } from '../actions/constants';
 
 export function* fetchAnimes() {
   yield put(fetchAnimesLoadingActionCreator());
   try {
-    yield put(fetchAnimesSuccessActionCreator());
+    const animesData = yield call(fetchKitsuAnimesPaginated);
+    yield put(fetchAnimesSuccessActionCreator(animesData));
   } catch (e) {
     yield put(fetchAnimesFailureActionCreator());
   }
