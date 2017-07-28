@@ -17,7 +17,11 @@ const fetchAnimesLoading = (state) => {
 const fetchAnimesSuccess = (state, animesData) => {
   // console.log(animesData.data);
   const newAnimesData = state.get('animesData').concat(fromJS(animesData.data));
-  return state.set('isFetching', false).set('animesData', newAnimesData);
+  const newDataCursor = state.get('dataCursor') + 10;
+  return state
+  .set('isFetching', false)
+  .set('dataCursor', newDataCursor)
+  .set('animesData', newAnimesData);
 };
 
 export default (
