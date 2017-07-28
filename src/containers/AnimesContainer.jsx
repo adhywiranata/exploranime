@@ -30,7 +30,9 @@ export default connect(
         const scrollY = document.body.scrollTop;
 
         if(documentHeight === windowHeight + scrollY) {
-          this.props.fetchAnimes(this.props.dataCursor);
+          if(!this.props.isFetching) {
+            this.props.fetchAnimes(this.props.dataCursor);
+          }
         }
       });
     }
