@@ -12,10 +12,10 @@ import {
 
 import { FETCH_ANIMES } from '../actions/constants';
 
-export function* fetchAnimes() {
+export function* fetchAnimes(action) {
   yield put(fetchAnimesLoadingActionCreator());
+  const animesData = yield call(fetchKitsuAnimesPaginated, action.payload);
   try {
-    const animesData = yield call(fetchKitsuAnimesPaginated);
     yield put(fetchAnimesSuccessActionCreator(animesData.data));
   } catch (e) {
     yield put(fetchAnimesFailureActionCreator());

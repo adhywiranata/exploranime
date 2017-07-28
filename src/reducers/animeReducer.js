@@ -15,7 +15,6 @@ const fetchAnimesLoading = (state) => {
 };
 
 const fetchAnimesSuccess = (state, animesData) => {
-  // console.log(animesData.data);
   const newAnimesData = state.get('animesData').concat(fromJS(animesData.data));
   const newDataCursor = state.get('dataCursor') + 10;
   return state
@@ -42,3 +41,7 @@ export const getAllAnimes = (animesState: AnimeStateType) => {
 export const getFetchingStatus = (animesState: AnimeStateType) => {
   return animesState.get('isFetching');
 };
+
+export const getAPICursorOffset = (animeState: AnimeStateType) => {
+  return animeState.get('dataCursor');
+}

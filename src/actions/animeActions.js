@@ -1,7 +1,8 @@
 import { FETCH_ANIMES, FETCH_ANIMES_LOADING, FETCH_ANIMES_SUCCESS, FETCH_ANIMES_FAILURE } from './constants';
 
-export const fetchAnimes = () => ({
+export const fetchAnimes = offset => ({
   type: FETCH_ANIMES,
+  payload: offset,
 });
 
 export const fetchAnimesLoading = () => ({
