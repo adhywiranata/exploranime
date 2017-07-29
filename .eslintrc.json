@@ -5,6 +5,12 @@
     "import/no-named-as-default-member": [0]
   },
   "globals": {
-    "document": true
+    "document": true,
+    "window": true,
+    "fetch": true,
+    "navigator": true,
+    "describe": true,
+    "it": true,
+    "expect": true
   }
 }
