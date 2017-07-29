@@ -36,6 +36,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build && react-snapshot",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "node_modules/.bin/eslint src",
+    "lint:fix": "node_modules/.bin/eslint --fix src"
   }
 }
