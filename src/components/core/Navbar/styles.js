@@ -1,7 +1,9 @@
 import glamorous from 'glamorous';
 
+import { colors } from '../../../config/themeConstants';
+
 export const MobileNavOverlay = glamorous.div({
-  backgroundColor: 'rgba(0,0,0,0.7)',
+  backgroundColor: colors.shadeDarkest,
   position: 'fixed',
   width: '100vw',
   height: '100vh',
