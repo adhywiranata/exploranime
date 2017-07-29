@@ -1,18 +1,20 @@
 // @flow
 import glamorous from 'glamorous';
 
+import { colors, boldScale } from '../../config/themeConstants';
+
 export const H1 = glamorous.h1({
   fontFamily: 'Open Sans',
-  fontWeight: 300,
-  color: '#BBBBBB',
+  fontWeight: boldScale.light,
+  color: colors.gray,
 });
 
 export const H2 = glamorous.h2({
   fontFamily: 'Open Sans',
-  fontWeight: 400,
+  fontWeight: boldScale.regular,
 });
 
 export const H3 = glamorous.h3({
   fontFamily: 'Open Sans',
-  fontWeight: 600,
+  fontWeight: boldScale.bold,
 });

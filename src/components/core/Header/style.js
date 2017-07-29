@@ -1,12 +1,12 @@
 // @flow
 import glamorous from 'glamorous';
 
+import { colors, fontSizeScale, boldScale, zScale } from '../../../config/themeConstants';
+
 export const HeaderWrapper = glamorous.div({
-  // background: '#3a7bd5',  /* fallback for old browsers */
-  // background: '-webkit-linear-gradient(to right, #3a6073, #3a7bd5)',
-  background: 'linear-gradient(to right, #3a6073, #3a7bd5)', /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: colors.blueGradient,
   position: 'fixed',
-  zIndex: 2,
+  zIndex: zScale.top,
   width: '100%',
   boxShadow: '0px 2px 6px 1px rgba(0,0,0,0.2)',
   boxSizing: 'border-box',
@@ -17,13 +17,13 @@ export const HeaderWrapper = glamorous.div({
 });
 
 export const LogoBold = glamorous.span({
-  fontSize: '1.5rem',
-  fontWeight: 700,
-  color: '#FFFFFF',
+  fontSize: fontSizeScale.huge,
+  fontWeight: boldScale.bold,
+  color: colors.white,
 });
 
 export const LogoReg = glamorous.span({
-  fontSize: '1.5rem',
-  fontWeight: 300,
-  color: '#FFFFFF',
+  fontSize: fontSizeScale.huge,
+  fontWeight: boldScale.light,
+  color: colors.white,
 });

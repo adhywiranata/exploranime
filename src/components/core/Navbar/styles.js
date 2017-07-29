@@ -1,29 +1,29 @@
 import glamorous from 'glamorous';
 
-import { colors } from '../../../config/themeConstants';
+import { colors, borders, fontSizeScale, zScale } from '../../../config/themeConstants';
 
 export const MobileNavOverlay = glamorous.div({
   backgroundColor: colors.shadeDarkest,
   position: 'fixed',
   width: '100vw',
   height: '100vh',
-  zIndex: 1,
+  zIndex: zScale.normal,
 });
 
 export const MobileNavContainer = glamorous.div({
-  backgroundColor: '#FFFFFF',
+  backgroundColor: colors.white,
   position: 'fixed',
   width: '80vw',
   height: '100vh',
-  zIndex: 3,
-  boxShadow: '3px 1px 10px 1px rgba(0,0,0,0.1)',
+  zIndex: zScale.topMost,
+  boxShadow: `3px 1px 10px 1px ${colors.shadeLight}`,
 });
 
 export const MobileNavHeader = glamorous.header({
-  background: 'linear-gradient(to right, #3a6073, #3a7bd5)', /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: colors.blueGradient,
   padding: 30,
   boxSizing: 'border-box',
-  color: 'white',
+  color: colors.white,
 });
 
 export const MobileNavList = glamorous.ul({
@@ -32,6 +32,6 @@ export const MobileNavList = glamorous.ul({
 
 export const MobileNavListItem = glamorous.li({
   padding: '20px 20px',
-  borderBottom: '1px solid rgba(0,0,0,0.05)',
-  fontSize: '0.8rem',
+  fontSize: fontSizeScale.small,
+  ...borders.bottom,
 });

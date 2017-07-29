@@ -2,9 +2,11 @@
 import glamorous from 'glamorous';
 import { Link as RouterLink } from 'react-router-dom';
 
+import { colors } from '../../config/themeConstants';
+
 export const Link = glamorous(RouterLink)({
   textDecoration: 'none',
-  color: '#3a7bd5',
+  color: colors.blue,
 });
 
 export const PlainLink = glamorous(RouterLink)({
