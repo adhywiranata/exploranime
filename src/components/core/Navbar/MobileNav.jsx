@@ -1,3 +1,10 @@
+// @flow
 import React from 'react';
 
-export default () => null;
+import { MobileNavOverlay } from './styles';
+
+export default () => (
+  <div>
+    <MobileNavOverlay />
+  </div>
+);
