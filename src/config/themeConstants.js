@@ -7,6 +7,7 @@ export const colors = {
   shadeNormal: 'rgba(0,0,0,0.1)',
   shadeDark: 'rgba(0,0,0,0.3)',
   shadeDarker: 'rgba(0,0,0,0.5)',
+  shadeDarkest: 'rgba(0,0,0,0.8)',
   gray: '#666666',
   black: '#000000',
 };
