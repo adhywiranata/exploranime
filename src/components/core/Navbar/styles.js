@@ -30,6 +30,6 @@ export const MobileNavList = glamorous.ul({
 
 export const MobileNavListItem = glamorous.li({
   padding: '20px 20px',
-  borderBottom: '1px solid rgba(0,0,0,0.1)',
+  borderBottom: '1px solid rgba(0,0,0,0.05)',
   fontSize: '0.8rem',
 });
