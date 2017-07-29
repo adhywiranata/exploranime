@@ -9,6 +9,7 @@ import glamorous from 'glamorous';
 import FontFaceObserver from 'fontfaceobserver';
 
 import Header from './components/core/Header/';
+import Navbar from './components/core/Navbar';
 import Footer from './components/core/Footer/';
 import store from './configureStore';
 
@@ -42,6 +43,7 @@ export default class extends Component {
             </Helmet>
             <AppContainer>
               <Header />
+              <Navbar />
               <div style={{ height: 'auto', paddingTop: 50, paddingBottom: 100 }}>
                 <Switch>
                   <Route exact path={'/'} component={ListSection} />
