@@ -7,11 +7,22 @@ import {
   MobileNavHeader as Header,
   MobileNavList as Ul,
   MobileNavListItem as Li,
+  CloseIcon,
 } from './styles';
+
+import closeSvg from './close.svg';
 
 export default ({ isNavbarActive, toggleNavbar }: { isNavbarActive: boolean, toggleNavbar: any }) => (
   <div>
-    {isNavbarActive && <Overlay onClick={toggleNavbar} />}
+    <Overlay
+      onClick={toggleNavbar}
+      isNavbarActive={isNavbarActive}
+    />
+    <CloseIcon
+      onClick={toggleNavbar}
+      src={closeSvg}
+      isNavbarActive={isNavbarActive}
+    />
     <Container isNavbarActive={isNavbarActive}>
       <Header>
         menu

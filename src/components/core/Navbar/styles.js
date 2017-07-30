@@ -2,13 +2,18 @@ import glamorous from 'glamorous';
 
 import { colors, borders, fontSizeScale, zScale } from '../../../config/themeConstants';
 
-export const MobileNavOverlay = glamorous.div({
-  backgroundColor: colors.shadeDarkest,
-  position: 'fixed',
-  width: '100vw',
-  height: '100vh',
-  zIndex: zScale.top,
-});
+export const MobileNavOverlay = glamorous.div(
+  {
+    position: 'fixed',
+    width: '100vw',
+    height: '100vh',
+    zIndex: zScale.top,
+    transition: '0.2s',
+  },
+  ({ isNavbarActive }) => ({
+    backgroundColor: isNavbarActive ? colors.shadeDarkest : 'transparent',
+  }),
+);
 
 export const MobileNavContainer = glamorous.div(
   {
@@ -41,3 +46,18 @@ export const MobileNavListItem = glamorous.li({
   fontSize: fontSizeScale.small,
   ...borders.bottom,
 });
+
+export const CloseIcon = glamorous.img(
+  {
+    position: 'fixed',
+    right: 12,
+    zIndex: 99,
+    width: 30,
+    height: 30,
+    transition: '0.2s',
+    top: 20,
+  },
+  ({ isNavbarActive }) => ({
+    transform: isNavbarActive ? '' : 'scale(0.1, 0.1)',
+  }),
+);
