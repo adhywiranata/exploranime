@@ -7,7 +7,7 @@ export const MobileNavOverlay = glamorous.div({
   position: 'fixed',
   width: '100vw',
   height: '100vh',
-  zIndex: zScale.normal,
+  zIndex: zScale.top,
 });
 
 export const MobileNavContainer = glamorous.div(
@@ -18,6 +18,7 @@ export const MobileNavContainer = glamorous.div(
     height: '100vh',
     zIndex: zScale.topMost,
     boxShadow: `3px 1px 10px 1px ${colors.shadeLight}`,
+    transition: 'left 0.3s',
   },
   ({ isNavbarActive }) => ({
     left: isNavbarActive ? 0 : '-80vw',
