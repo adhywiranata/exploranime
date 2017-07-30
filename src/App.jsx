@@ -42,14 +42,19 @@ export default class extends Component {
     };
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.toggleSearch = this.toggleSearch.bind(this);
   }
 
   toggleNavbar() {
     this.setState({ isNavbarActive: !this.state.isNavbarActive });
   }
 
+  toggleSearch() {
+    this.setState({ isSearchActive: !this.state.isSearchActive });
+  }
+
   render(): React$Element<any> {
-    const { isNavbarActive } = this.state;
+    const { isNavbarActive, isSearchActive } = this.state;
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
@@ -58,7 +63,12 @@ export default class extends Component {
               <title>Exploranime</title>
             </Helmet>
             <AppContainer>
-              <Header toggleNavbar={this.toggleNavbar} isNavbarActive={isNavbarActive} />
+              <Header
+                isNavbarActive={isNavbarActive}
+                isSearchActive={isSearchActive}
+                toggleNavbar={this.toggleNavbar}
+                toggleSearch={this.toggleSearch}
+              />
               <Navbar />
               <MobileNav isNavbarActive={isNavbarActive} toggleNavbar={this.toggleNavbar} />
               <div style={{ height: 'auto', paddingTop: 50, paddingBottom: 100 }}>

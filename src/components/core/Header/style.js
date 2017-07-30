@@ -3,18 +3,25 @@ import glamorous from 'glamorous';
 
 import { colors, fontSizeScale, boldScale, zScale } from '../../../config/themeConstants';
 
-export const HeaderWrapper = glamorous.div({
-  background: colors.blueGradient,
-  position: 'fixed',
-  zIndex: zScale.top,
-  width: '100%',
-  boxShadow: '0px 2px 6px 1px rgba(0,0,0,0.2)',
-  boxSizing: 'border-box',
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  padding: '15px 10px',
-});
+export const HeaderWrapper = glamorous.div(
+  {
+    position: 'fixed',
+    zIndex: zScale.top,
+    width: '100%',
+    boxShadow: '0px 2px 6px 1px rgba(0,0,0,0.2)',
+    boxSizing: 'border-box',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 15,
+    paddingBottom: 15,
+  },
+  ({ isSearchActive }) => ({
+    background: isSearchActive ? colors.gray : colors.blueGradient,
+  }),
+);
 
 export const LogoBold = glamorous.span({
   fontSize: fontSizeScale.huge,
@@ -32,7 +39,11 @@ export const HamburgerIcon = glamorous.img(
   {
     width: 40,
     height: 40,
+    transition: '0.1s',
   },
+  ({ isSearchActive }) => ({
+    transform: isSearchActive ? 'translate(-100px, 0)' : '',
+  }),
 );
 
 export const SearchIcon = glamorous.img(
@@ -41,7 +52,29 @@ export const SearchIcon = glamorous.img(
     height: 30,
     transition: '0.2s',
   },
-  ({ isNavbarActive }) => ({
+  ({ isNavbarActive, isSearchActive }) => ({
     transform: isNavbarActive ? 'scale(0,0) rotate(-90deg)' : '',
+  }),
+);
+
+export const SearchInput = glamorous.input(
+  {
+    backgroundColor: 'transparent',
+    color: colors.white,
+    padding: 10,
+    border: 0,
+    fontSize: fontSizeScale.medium,
+    position: 'absolute',
+    width: '70vw',
+    borderBottom: '1px solid rgba(255,255,255,0.3)',
+    outline: 'none',
+    transition: 'left 0.2s',
+    '&::placeholder': {
+      color: colors.white,
+      opacity: 0.5,
+    },
+  },
+  ({ isSearchActive }) => ({
+    // top: isSearchActive ? 50 : 0,
   }),
 );
