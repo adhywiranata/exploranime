@@ -34,7 +34,22 @@ const AppContainer = glamorous.div({
 });
 
 export default class extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isNavbarActive: false,
+      isSearchActive: false,
+    };
+
+    this.toggleNavbar = this.toggleNavbar.bind(this);
+  }
+
+  toggleNavbar() {
+    this.setState({ isNavbarActive: !this.state.isNavbarActive });
+  }
+
   render(): React$Element<any> {
+    const { isNavbarActive } = this.state;
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
@@ -43,9 +58,9 @@ export default class extends Component {
               <title>Exploranime</title>
             </Helmet>
             <AppContainer>
-              <Header />
+              <Header toggleNavbar={this.toggleNavbar} />
               <Navbar />
-              <MobileNav />
+              <MobileNav isNavbarActive={isNavbarActive} toggleNavbar={this.toggleNavbar} />
               <div style={{ height: 'auto', paddingTop: 50, paddingBottom: 100 }}>
                 <Switch>
                   <Route exact path={'/'} component={ListSection} />

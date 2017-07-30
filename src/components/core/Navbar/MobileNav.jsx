@@ -9,10 +9,10 @@ import {
   MobileNavListItem as Li,
 } from './styles';
 
-export default () => (
+export default ({ isNavbarActive, toggleNavbar }: { isNavbarActive: boolean, toggleNavbar: any }) => (
   <div>
-    <Overlay />
-    <Container>
+    {isNavbarActive && <Overlay onClick={toggleNavbar} />}
+    <Container isNavbarActive={isNavbarActive}>
       <Header>
         menu
       </Header>

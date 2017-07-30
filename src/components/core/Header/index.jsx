@@ -7,9 +7,14 @@ import NavSearch from './navigation-search.svg';
 
 import { HeaderWrapper, LogoBold, LogoReg } from './style';
 
-export default (): React$Element<any> => (
+export default ({ toggleNavbar }: { toggleNavbar: any }): React$Element<any> => (
   <HeaderWrapper>
-    <img src={NavBurger} style={{ width: 30, height: 30 }} alt={'nav'} />
+    <img
+      src={NavBurger}
+      onClick={toggleNavbar}
+      style={{ width: 30, height: 30 }}
+      alt={'nav'}
+    />
     <PlainLink to={'/'}>
       <LogoBold>Explor</LogoBold>
       <LogoReg>anime</LogoReg>
