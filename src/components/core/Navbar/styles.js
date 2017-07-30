@@ -8,9 +8,10 @@ export const MobileNavOverlay = glamorous.div(
     width: '100vw',
     height: '100vh',
     zIndex: zScale.top,
-    transition: '0.2s',
+    transition: 'backgroundColor 0.2s',
   },
   ({ isNavbarActive }) => ({
+    display: isNavbarActive ? 'block' : 'none',
     backgroundColor: isNavbarActive ? colors.shadeDarkest : 'transparent',
   }),
 );
@@ -58,6 +59,7 @@ export const CloseIcon = glamorous.img(
     top: 20,
   },
   ({ isNavbarActive }) => ({
-    transform: isNavbarActive ? '' : 'scale(0.1, 0.1)',
+    // display: isNavbarActive ? 'block' : 'none',
+    transform: isNavbarActive ? '' : 'scale(0, 0) rotate(90deg)',
   }),
 );

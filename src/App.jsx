@@ -58,7 +58,7 @@ export default class extends Component {
               <title>Exploranime</title>
             </Helmet>
             <AppContainer>
-              <Header toggleNavbar={this.toggleNavbar} />
+              <Header toggleNavbar={this.toggleNavbar} isNavbarActive={isNavbarActive} />
               <Navbar />
               <MobileNav isNavbarActive={isNavbarActive} toggleNavbar={this.toggleNavbar} />
               <div style={{ height: 'auto', paddingTop: 50, paddingBottom: 100 }}>

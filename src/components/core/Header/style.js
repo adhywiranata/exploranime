@@ -27,3 +27,21 @@ export const LogoReg = glamorous.span({
   fontWeight: boldScale.light,
   color: colors.white,
 });
+
+export const HamburgerIcon = glamorous.img(
+  {
+    width: 40,
+    height: 40,
+  },
+);
+
+export const SearchIcon = glamorous.img(
+  {
+    width: 30,
+    height: 30,
+    transition: '0.2s',
+  },
+  ({ isNavbarActive }) => ({
+    transform: isNavbarActive ? 'scale(0,0) rotate(-90deg)' : '',
+  }),
+);

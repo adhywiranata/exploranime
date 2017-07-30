@@ -5,20 +5,19 @@ import { PlainLink } from '../Links';
 import NavBurger from './navigation-hamburger.svg';
 import NavSearch from './navigation-search.svg';
 
-import { HeaderWrapper, LogoBold, LogoReg } from './style';
+import { HeaderWrapper, LogoBold, LogoReg, HamburgerIcon, SearchIcon } from './style';
 
-export default ({ toggleNavbar }: { toggleNavbar: any }): React$Element<any> => (
+export default ({ isNavbarActive, toggleNavbar }: { isNavbarActive: boolean, toggleNavbar: any }): React$Element<any> => (
   <HeaderWrapper>
-    <img
+    <HamburgerIcon
       src={NavBurger}
       onClick={toggleNavbar}
-      style={{ width: 30, height: 30 }}
       alt={'nav'}
     />
     <PlainLink to={'/'}>
       <LogoBold>Explor</LogoBold>
       <LogoReg>anime</LogoReg>
     </PlainLink>
-    <img src={NavSearch} style={{ width: 20, height: 20 }} alt={'search'} />
+    <SearchIcon src={NavSearch} alt={'search'} isNavbarActive={isNavbarActive} />
   </HeaderWrapper>
 );
