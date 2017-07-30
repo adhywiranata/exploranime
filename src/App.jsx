@@ -71,6 +71,9 @@ export default class extends Component {
               />
               <Navbar />
               <MobileNav isNavbarActive={isNavbarActive} toggleNavbar={this.toggleNavbar} />
+              {/*<MobileSearchModal
+                isSearchActive={isSearchActive}
+              />*/}
               <div style={{ height: 'auto', paddingTop: 50, paddingBottom: 100 }}>
                 <Switch>
                   <Route exact path={'/'} component={ListSection} />

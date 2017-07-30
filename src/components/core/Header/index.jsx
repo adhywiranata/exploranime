@@ -5,7 +5,8 @@ import { PlainLink } from '../Links';
 import NavBurger from './navigation-hamburger.svg';
 import NavSearch from './navigation-search.svg';
 
-import { HeaderWrapper, LogoBold, LogoReg, HamburgerIcon, SearchIcon, SearchInput } from './style';
+import { HeaderWrapper, LogoBold, LogoReg, HamburgerIcon, SearchIcon, SearchInput,
+MobileSearchModal, } from './style';
 
 type Props = {
   isNavbarActive: boolean,
