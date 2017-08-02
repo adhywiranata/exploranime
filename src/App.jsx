@@ -11,6 +11,7 @@ import FontFaceObserver from 'fontfaceobserver';
 import Header from './components/core/Header/';
 import Navbar from './components/core/Navbar';
 import MobileNav from './components/core/Navbar/MobileNav';
+import MobileSearchModal from './components/core/search/MobileSearchModal';
 import Footer from './components/core/Footer/';
 import store from './configureStore';
 
@@ -71,9 +72,9 @@ export default class extends Component {
               />
               <Navbar />
               <MobileNav isNavbarActive={isNavbarActive} toggleNavbar={this.toggleNavbar} />
-              {/*<MobileSearchModal
+              {<MobileSearchModal
                 isSearchActive={isSearchActive}
-              />*/}
+              />}
               <div style={{ height: 'auto', paddingTop: 50, paddingBottom: 100 }}>
                 <Switch>
                   <Route exact path={'/'} component={ListSection} />
