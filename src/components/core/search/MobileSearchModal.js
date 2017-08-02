@@ -1,9 +1,11 @@
 import React from 'react';
 
-import { ModalWrapper } from './styles';
+import { ModalWrapper, SearchHeading, BigIcon } from './styles';
+import searchIcon from './navigation-search.svg';
 
 export default ({ isSearchActive }) => (
   <ModalWrapper isSearchActive={isSearchActive}>
-    wow
+    <BigIcon src={searchIcon} />
+    <SearchHeading>Search Your Animes Here!</SearchHeading>
   </ModalWrapper>
 );
