@@ -4,9 +4,10 @@ import React from 'react';
 import { PlainLink } from '../Links';
 import NavBurger from './navigation-hamburger.svg';
 import NavSearch from './navigation-search.svg';
+import CloseIcon from './close.svg';
 
 import { HeaderWrapper, LogoBold, LogoReg, HamburgerIcon, SearchIcon, SearchInput,
-MobileSearchModal, } from './style';
+MobileSearchModal, CloseSearchIcon, } from './style';
 
 type Props = {
   isNavbarActive: boolean,
@@ -34,6 +35,13 @@ export default ({ isNavbarActive, isSearchActive, toggleNavbar, toggleSearch }: 
     <SearchIcon
       src={NavSearch}
       alt={'search'}
+      isNavbarActive={isNavbarActive}
+      isSearchActive={isSearchActive}
+      onClick={toggleSearch}
+    />
+    <CloseSearchIcon
+      src={CloseIcon}
+      alt={'close'}
       isNavbarActive={isNavbarActive}
       isSearchActive={isSearchActive}
       onClick={toggleSearch}

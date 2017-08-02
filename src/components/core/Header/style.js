@@ -53,7 +53,21 @@ export const SearchIcon = glamorous.img(
     transition: '0.2s',
   },
   ({ isNavbarActive, isSearchActive }) => ({
-    transform: isNavbarActive ? 'scale(0,0) rotate(-90deg)' : '',
+    transform: (isNavbarActive || isSearchActive) ? 'scale(0,0) rotate(-90deg)' : '',
+  }),
+);
+
+export const CloseSearchIcon = glamorous.img(
+  {
+    width: 30,
+    height: 30,
+    transition: '0.2s',
+    position: 'absolute',
+    right: 10,
+  },
+  ({ isNavbarActive, isSearchActive }) => ({
+    transform: isSearchActive ? '' : 'scale(0,0) rotate(-90deg)',
+    // display: isSearchActive ? 'block' : 'block',
   }),
 );
 
