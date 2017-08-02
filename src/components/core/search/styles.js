@@ -6,7 +6,7 @@ export const ModalWrapper = glamorous.div(
   {
     position: 'fixed',
     zIndex: zScale.normal,
-    transition: '0.3s',
+    transition: 'opacity 1s',
     width: '100vw',
     height: '100vh',
     backgroundColor: colors.white,
@@ -30,7 +30,15 @@ export const SearchHeading = glamorous.span({
   fontSize: fontSizeScale.large,
 });
 
-export const BigIcon = glamorous.img({
-  width: '30%',
-  height: 150,
-});
+export const BigIcon = glamorous.img(
+  {
+    width: '30%',
+    height: 150,
+    transition: '0.5s',
+    transform: 'rotate(-90deg) scale(0,0)',
+  },
+  ({ isSearchActive }) => ({
+    transform: isSearchActive ? '' : 'rotate(-90deg) scale(0,0)',
+    // display: isSearchActive ? 'block' : 'none',
+  }),
+);
