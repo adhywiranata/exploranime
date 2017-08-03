@@ -1,12 +1,13 @@
 import React from 'react';
 
 import { H2, H3 } from '../../core/TextHeadings';
+import LazyImage from '../../core/LazyImage';
 
 export default (): React$Element<any> => (
   <div style={{ display: 'flex', flexDirection: 'column', padding: 20, boxSizing: 'border-box', alignItems: 'center' }}>
-    
-    <div style={{ textAlign: 'center' }}>
-      <img src={'https://media.kitsu.io/anime/poster_images/10740/small.jpg?1441243505'} width={'50%'} />
+
+    <div style={{ textAlign: 'center', width: '50%' }}>
+      <LazyImage src={'https://media.kitsu.io/anime/poster_images/10740/small.jpg?1441243505'} />
     </div>
 
     <div style={{ padding: '0px 20px', width: '100%' }}>
