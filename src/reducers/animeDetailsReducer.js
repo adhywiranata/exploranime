@@ -7,7 +7,9 @@ import {
   FETCH_ANIME_DETAILS_FAILURE,
 } from '../actions/constants';
 
-export default (state, action) => {
+const initialState = {};
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ANIME_DETAILS_LOADING: return state;
     case FETCH_ANIME_DETAILS_SUCCESS: return state;
