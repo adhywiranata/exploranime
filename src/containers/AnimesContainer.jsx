@@ -24,14 +24,15 @@ export default connect(
   class extends React.Component {
     constructor(props) {
       super(props);
+      const { isFetching, fetchAnimes, dataCursor } = props;
       document.addEventListener('scroll', () => {
         const documentHeight = document.body.scrollHeight;
         const windowHeight = window.innerHeight;
         const scrollY = document.body.scrollTop;
 
-        if(documentHeight === windowHeight + scrollY) {
-          if(!this.props.isFetching) {
-            this.props.fetchAnimes(this.props.dataCursor);
+        if (documentHeight === windowHeight + scrollY) {
+          if (!this.isFetching) {
+            this.fetchAnimes(this.dataCursor);
           }
         }
       });
