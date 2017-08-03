@@ -23,10 +23,6 @@ export const ItemWrapper = glamorous.div({
   },
 });
 
-export const ItemCover = glamorous.img({
-  width: '100%',
-});
-
 export const Score = glamorous.span({
   color: '#F4B350',
   fontSize: '1.7rem',

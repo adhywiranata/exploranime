@@ -17,12 +17,12 @@ export default class extends React.Component {
   }
 
   render() {
-    const { src } = this.props;
+    const { src, style } = this.props;
     const { imgFinishedLoading } = this.state;
     return (
-      <div style={{ width: '100%', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ ...style, width: '100%', position: 'relative', overflow: 'hidden' }}>
         {!imgFinishedLoading && (
-          <ItemCoverLoading style={{ height: 400, position: 'absolute', top: 0, width: '200%' }} />
+          <ItemCoverLoading style={{ height: '100%', position: 'absolute', top: 0, width: '200%' }} />
         )}
         <img
           src={src}

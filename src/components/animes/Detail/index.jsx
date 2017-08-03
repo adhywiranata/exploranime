@@ -7,7 +7,7 @@ export default (): React$Element<any> => (
   <div style={{ display: 'flex', flexDirection: 'column', padding: 20, boxSizing: 'border-box', alignItems: 'center' }}>
 
     <div style={{ textAlign: 'center', width: '50%' }}>
-      <LazyImage src={'https://media.kitsu.io/anime/poster_images/10740/small.jpg?1441243505'} />
+      <LazyImage src={'https://media.kitsu.io/anime/poster_images/10740/small.jpg?1441243505'} style={{ height: 220 }} />
     </div>
 
     <div style={{ padding: '0px 20px', width: '100%' }}>
