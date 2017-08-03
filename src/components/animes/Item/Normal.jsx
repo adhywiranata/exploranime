@@ -7,15 +7,15 @@ import LazyImage from '../../core/LazyImage';
 
 export default ({ attributes }): React$Element<any> => {
   return (
-  <ItemWrapper>
-    <PlainLink to={'/'}>
+  <ItemWrapper style={{ background: '#EEEEEE' }}>
+    <PlainLink to={'/'} style={{ backgroundColor: '#eee' }}>
       <LazyImage
         src={attributes.posterImage.small}
         alt={attributes.titles.en}
-        style={{ width: '100%', height: 230 }}
+        style={{ width: '100%', height: 220 }}
       />
     </PlainLink>
-    <div style={{ height: 100, padding: '0 20px', display: 'flex', flexDirection: 'column', alignItems: 'center' , justifyContents: 'space-between' }}>
+    <div style={{ width: '90%', background: '#FFFFFF', height: 100, padding: '0 20px', paddingTop: 20, paddingBottom: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' , justifyContents: 'space-between' }}>
       <Link to={'/'} style={{ fontSize: '0.8rem', textAlign: 'center', flex: 1 }}>
         {/*attributes.titles.en !== '' ? attributes.titles.en : attributes.titles.en_jp*/}
         {attributes.canonicalTitle.substr(0, 35)}

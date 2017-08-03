@@ -12,5 +12,6 @@ export default (): React$Element<any> => (
     <ItemScoreWrapper>
       <ItemTitleLoading />
     </ItemScoreWrapper>
+    <div style={{ width: '100%', height: 30 }} />
   </ItemWrapper>
 );
