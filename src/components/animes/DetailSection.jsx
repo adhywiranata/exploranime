@@ -2,7 +2,7 @@
 import React from 'react';
 
 import Detail from './Detail';
-import { H2, H3 } from '../core/TextHeadings';
+import { H2 } from '../core/TextHeadings';
 
 export default (): React$Element<any> => (
   <div style={{ padding: 0, display: 'flex', flexDirection: 'column' }}>

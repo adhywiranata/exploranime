@@ -1,6 +1,6 @@
 import glamorous from 'glamorous';
 
-import { colors, borders, fontSizeScale, zScale } from '../../../config/themeConstants';
+import { colors, fontSizeScale, zScale } from '../../../config/themeConstants';
 
 export const ModalWrapper = glamorous.div(
   {

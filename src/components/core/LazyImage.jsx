@@ -12,7 +12,7 @@ export default class extends React.Component {
 
   componentDidMount() {
     this.img.onload = () => {
-      this.setState({ imgFinishedLoading: true });
+      // this.setState({ imgFinishedLoading: true });
     };
   }
 

@@ -7,7 +7,7 @@ import NavSearch from './navigation-search.svg';
 import CloseIcon from './close.svg';
 
 import { HeaderWrapper, LogoBold, LogoReg, HamburgerIcon, SearchIcon, SearchInput,
-MobileSearchModal, CloseSearchIcon, } from './style';
+CloseSearchIcon, } from './style';
 
 type Props = {
   isNavbarActive: boolean,
