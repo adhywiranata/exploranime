@@ -16,7 +16,7 @@ import Footer from './components/core/Footer/';
 import store from './configureStore';
 
 import ListSection from './components/animes/ListSection';
-import DetailSection from './components/animes/DetailSection';
+import AnimeDetailsContainer from './containers/AnimeDetailsContainer';
 
 const history = createHistory();
 
@@ -78,7 +78,7 @@ export default class extends Component {
               <div style={{ height: 'auto', paddingTop: 50, paddingBottom: 100 }}>
                 <Switch>
                   <Route exact path={'/'} component={ListSection} />
-                  <Route exact path={'/anime/:id'} component={DetailSection} />
+                  <Route exact path={'/anime/:id'} component={AnimeDetailsContainer} />
                 </Switch>
               </div>
               <Footer />
