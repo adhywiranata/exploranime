@@ -21,7 +21,8 @@ export default connect(
 )(
   class extends React.Component {
     componentDidMount() {
-      this.props.fetchAnimeDetails(3936);
+      const animeId = parseInt(this.props.match.params.id, 10);
+      this.props.fetchAnimeDetails(animeId);
     }
 
     render() {
