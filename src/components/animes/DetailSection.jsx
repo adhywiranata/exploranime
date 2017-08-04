@@ -20,6 +20,6 @@ export default ({ anime }): React$Element<any> => (
         coverPaddingTop={anime.attributes.coverImageTopOffset}
       />
     )}
-    <Detail />
+    <Detail anime={anime} />
   </div>
 );

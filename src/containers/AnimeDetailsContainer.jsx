@@ -26,8 +26,6 @@ export default connect(
 
     render() {
       const { anime } = this.props;
-      // console.log(anime.attributes);
-      console.log(anime.attributes ? anime.attributes.canonicalTitle : '');
       return (
         <DetailSection anime={anime} />
       );
