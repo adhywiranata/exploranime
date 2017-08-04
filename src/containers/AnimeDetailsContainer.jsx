@@ -4,13 +4,16 @@ import { connect } from 'react-redux';
 
 import DetailSection from '../components/animes/DetailSection';
 import { fetchAnimeDetails } from '../actions/animeActions';
-import { getFetchingStatus } from '../reducers/animeDetailsReducer';
+import { getAnime, getFetchingStatus } from '../reducers/animeDetailsReducer';
 
-const mapStateToProps = state => ({
-  isFetching: getFetchingStatus(state.animeDetails),
-});
+const mapStateToProps = state => {
+  return {
+    anime: getAnime(state.animeDetails),
+    isFetching: getFetchingStatus(state.animeDetails),
+  }
+};
 const mapDispatchToProps = dispatch => ({
-  fetchAnimeDetails: () => dispatch(fetchAnimeDetails()),
+  fetchAnimeDetails: id => dispatch(fetchAnimeDetails(id)),
 });
 
 export default connect(
@@ -19,12 +22,15 @@ export default connect(
 )(
   class extends React.Component {
     componentDidMount() {
-      this.props.fetchAnimeDetails();
+      this.props.fetchAnimeDetails(1);
     }
 
     render() {
+      const { anime } = this.props;
+      const { id, type, attributes } = anime;
+      const animeData = { id, type, attributes };
       return (
-        <DetailSection />
+        <DetailSection anime={animeData} />
       );
     }
   }

@@ -16,13 +16,21 @@ const fetchAnimeDetailsLoading = (state) => {
   return state.set('isFetching', true);
 };
 
+const fetchAnimeDetailsSuccess = (state, anime) => {
+  return state.set('animeData', fromJS(anime));
+};
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ANIME_DETAILS_LOADING: return fetchAnimeDetailsLoading(state);
-    case FETCH_ANIME_DETAILS_SUCCESS: return state;
+    case FETCH_ANIME_DETAILS_SUCCESS: return fetchAnimeDetailsSuccess(state, action.payload);
     case FETCH_ANIME_DETAILS_FAILURE: return state;
     default: return state;
   }
+};
+
+export const getAnime = (state) => {
+  return state.get('animeData').toJS();
 };
 
 export const getFetchingStatus = (state) => {

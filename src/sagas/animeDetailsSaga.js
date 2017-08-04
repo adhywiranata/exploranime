@@ -16,7 +16,8 @@ export function* fetchAnimeDetails(action) {
   yield put(fetchAnimeDetailsLoadingActionCreator());
   const animesData = yield call(fetchKitsuAnimeDetails, action.payload);
   try {
-    yield put(fetchAnimeDetailsSuccessActionCreator(animesData.data));
+    // TODO handle if no anime id found!
+    yield put(fetchAnimeDetailsSuccessActionCreator(animesData.data.data[0]));
   } catch (e) {
     yield put(fetchAnimeDetailsFailureActionCreator());
   }

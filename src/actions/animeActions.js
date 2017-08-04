@@ -28,8 +28,9 @@ export const fetchAnimesFailure = () => ({
   type: FETCH_ANIMES_FAILURE,
 });
 
-export const fetchAnimeDetails = () => ({
+export const fetchAnimeDetails = id => ({
   type: FETCH_ANIME_DETAILS,
+  payload: id,
 });
 
 // Action Creators for Fetching Anime Details
@@ -37,9 +38,12 @@ export const fetchAnimeDetailsLoading = () => ({
   type: FETCH_ANIME_DETAILS_LOADING,
 });
 
-export const fetchAnimeDetailsSuccess = () => ({
-  type: FETCH_ANIME_DETAILS_SUCCESS,
-});
+export const fetchAnimeDetailsSuccess = animeData => {
+  return {
+    type: FETCH_ANIME_DETAILS_SUCCESS,
+    payload: animeData,
+  }
+};
 
 export const fetchAnimeDetailsFailure = () => ({
   type: FETCH_ANIME_DETAILS_FAILURE,
