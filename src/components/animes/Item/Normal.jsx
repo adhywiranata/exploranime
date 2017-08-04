@@ -5,10 +5,10 @@ import { ItemWrapper, Score } from './style';
 import { PlainLink, Link } from '../../core/Links';
 import LazyImage from '../../core/LazyImage';
 
-export default ({ attributes }): React$Element<any> => {
+export default ({ id, attributes }): React$Element<any> => {
   return (
   <ItemWrapper style={{ background: '#EEEEEE' }}>
-    <PlainLink to={'/'} style={{ backgroundColor: '#eee' }}>
+    <PlainLink to={`/anime/${id}`} style={{ backgroundColor: '#eee' }}>
       <LazyImage
         src={attributes.posterImage.small}
         alt={attributes.titles.en}
@@ -16,7 +16,7 @@ export default ({ attributes }): React$Element<any> => {
       />
     </PlainLink>
     <div style={{ width: '90%', background: '#FFFFFF', height: 100, padding: '0 20px', paddingTop: 20, paddingBottom: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' , justifyContents: 'space-between' }}>
-      <Link to={'/'} style={{ fontSize: '0.8rem', textAlign: 'center', flex: 1 }}>
+      <Link to={`/anime/${id}`} style={{ fontSize: '0.8rem', textAlign: 'center', flex: 1 }}>
         {/*attributes.titles.en !== '' ? attributes.titles.en : attributes.titles.en_jp*/}
         {attributes.canonicalTitle.substr(0, 35)}
         {attributes.canonicalTitle.length >= 35 && '...'}

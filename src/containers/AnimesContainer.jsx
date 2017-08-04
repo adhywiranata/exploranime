@@ -25,17 +25,23 @@ export default connect(
     constructor(props) {
       super(props);
       const { isFetching, fetchAnimes, dataCursor } = props;
+      let scrollCursor = dataCursor;
       document.addEventListener('scroll', () => {
         const documentHeight = document.body.scrollHeight;
         const windowHeight = window.innerHeight;
         const scrollY = document.body.scrollTop;
 
         if (documentHeight === windowHeight + scrollY) {
-          if (!this.isFetching) {
-            this.fetchAnimes(this.dataCursor);
+          if (!isFetching) {
+            scrollCursor += 10;
+            fetchAnimes(scrollCursor);
           }
         }
       });
+    }
+
+    componentWillMount() {
+
     }
 
     componentDidMount() {
