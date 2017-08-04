@@ -12,7 +12,7 @@ export default ({ title, image, coverPaddingTop }) => (
     backgroundAttachment: 'fixed',
     backgroundSize: 'contain',
     position: 'relative',
-    backgroundPosition: '0 ${coverPaddingTop}px',
+    backgroundPosition: `0 40px`,
   }}>
     <div style={{
       background: 'rgba(0,0,0,0.5)',
