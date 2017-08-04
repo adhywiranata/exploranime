@@ -6,12 +6,11 @@ import DetailSection from '../components/animes/DetailSection';
 import { fetchAnimeDetails } from '../actions/animeActions';
 import { getAnime, getFetchingStatus } from '../reducers/animeDetailsReducer';
 
-const mapStateToProps = state => {
-  return {
-    anime: getAnime(state.animeDetails),
-    isFetching: getFetchingStatus(state.animeDetails),
-  }
-};
+const mapStateToProps = state => ({
+  anime: getAnime(state.animeDetails),
+  isFetching: getFetchingStatus(state.animeDetails),
+});
+
 const mapDispatchToProps = dispatch => ({
   fetchAnimeDetails: id => dispatch(fetchAnimeDetails(id)),
 });
@@ -22,16 +21,16 @@ export default connect(
 )(
   class extends React.Component {
     componentDidMount() {
-      this.props.fetchAnimeDetails(1);
+      this.props.fetchAnimeDetails(3936);
     }
 
     render() {
       const { anime } = this.props;
-      const { id, type, attributes } = anime;
-      const animeData = { id, type, attributes };
+      // console.log(anime.attributes);
+      console.log(anime.attributes ? anime.attributes.canonicalTitle : '');
       return (
-        <DetailSection anime={animeData} />
+        <DetailSection anime={anime} />
       );
     }
-  }
+  },
 );

@@ -3,15 +3,16 @@ import React from 'react';
 
 import { H2 } from '../../core/TextHeadings';
 
-export default () => (
+export default ({ title, image, coverPaddingTop }) => (
   <div style={{
-    background: 'url("https://media.kitsu.io/anime/cover_images/10740/original.jpg?1445804501")',
-    height: 100,
+    background: `url(${image})`,
+    height: 60,
     width: '100%',
     padding: '50px 0',
     backgroundAttachment: 'fixed',
-    backgroundSize: 'cover',
+    backgroundSize: 'contain',
     position: 'relative',
+    backgroundPosition: '0 ${coverPaddingTop}px',
   }}>
     <div style={{
       background: 'rgba(0,0,0,0.5)',
@@ -22,8 +23,8 @@ export default () => (
       boxSizing: 'border-box',
       top: 0,
     }}>
-      <H2 style={{ color: 'white', position: 'absolute', bottom: 0 }}>
-        Ano hi Mita Hana No Namae Wo Bokutachi Wa Shiranai
+      <H2 style={{ color: 'white', position: 'absolute', bottom: 0, textAlign: 'center' }}>
+        {title}
       </H2>
     </div>
   </div>
