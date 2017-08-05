@@ -7,16 +7,16 @@ import {
   FETCH_ANIME_DETAILS_LOADING,
   FETCH_ANIME_DETAILS_SUCCESS,
   FETCH_ANIME_DETAILS_FAILURE,
+  FETCH_ANIMES_BY_KEYWORD,
+  FETCH_ANIMES_BY_KEYWORD_LOADING,
+  FETCH_ANIMES_BY_KEYWORD_SUCCESS,
+  FETCH_ANIMES_BY_KEYWORD_FAILURE,
 } from './constants';
 
 // Action Creators for Fetch Animes List
 export const fetchAnimes = offset => ({
   type: FETCH_ANIMES,
   payload: offset,
-});
-
-export const fetchAnimesLoading = () => ({
-  type: FETCH_ANIMES_LOADING,
 });
 
 export const fetchAnimesSuccess = animesData => ({
@@ -34,6 +34,10 @@ export const fetchAnimeDetails = id => ({
 });
 
 // Action Creators for Fetching Anime Details
+export const fetchAnimesLoading = () => ({
+  type: FETCH_ANIMES_LOADING,
+});
+
 export const fetchAnimeDetailsLoading = () => ({
   type: FETCH_ANIME_DETAILS_LOADING,
 });
@@ -47,4 +51,23 @@ export const fetchAnimeDetailsSuccess = animeData => {
 
 export const fetchAnimeDetailsFailure = () => ({
   type: FETCH_ANIME_DETAILS_FAILURE,
+});
+
+// Action Creators for Fetching Anime Based on Keyword
+export const fetchAnimesByKeyword = keyword => ({
+  type: FETCH_ANIMES_BY_KEYWORD,
+  payload: keyword,
+});
+
+export const fetchAnimesByKeywordLoading = () => ({
+  type: FETCH_ANIMES_BY_KEYWORD_LOADING,
+});
+
+export const fetchAnimesByKeywordSuccess = animes => ({
+  type: FETCH_ANIMES_BY_KEYWORD_SUCCESS,
+  payload: animes,
+});
+
+export const fetchAnimesByKeywordFailure = () => ({
+  type: FETCH_ANIMES_BY_KEYWORD_FAILURE,
 });
