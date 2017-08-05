@@ -33,6 +33,7 @@ const fetchAnimesLoading = (state) => {
 
 const fetchAnimesSuccess = (state, results) => {
   const searchResults = results.map(anime => ({
+    id: anime.id,
     title: anime.attributes.canonicalTitle,
     image: anime.attributes.posterImage.tiny,
   }));

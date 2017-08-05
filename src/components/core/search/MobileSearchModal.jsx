@@ -22,7 +22,7 @@ export default ({ isSearchActive, isFetching, searchResults, searchTerm }) => (
       <ModalWrapper isSearchActive={isSearchActive} style={{ justifyContent: 'flex-start', backgroundColor: 'white' }}>
         <SearchResultHeading>SEARCH RESULTS</SearchResultHeading>
         <ResultsList>
-          {searchResults.map((anime, index) => <SearchResultItem key={index} {...anime} />)}
+          {searchResults.map((anime) => <SearchResultItem key={anime.id} {...anime} />)}
         </ResultsList>
       </ModalWrapper>
     )}
