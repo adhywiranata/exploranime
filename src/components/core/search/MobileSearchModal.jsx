@@ -4,7 +4,13 @@ import SearchResultItem from './SearchResultItem';
 import { ModalWrapper, SearchHeading, BigIcon, SearchResultHeading, ResultsList } from './styles';
 import searchIcon from './navigation-search.svg';
 
-export default ({ isSearchActive, isFetching, searchResults, searchTerm }) => (
+export default ({
+  isSearchActive,
+  handleSearchResultLink,
+  isFetching,
+  searchResults,
+  searchTerm,
+}) => (
   <div>
     { searchTerm === '' && (
       <ModalWrapper isSearchActive={isSearchActive}>
@@ -22,7 +28,13 @@ export default ({ isSearchActive, isFetching, searchResults, searchTerm }) => (
       <ModalWrapper isSearchActive={isSearchActive} style={{ justifyContent: 'flex-start', backgroundColor: 'white' }}>
         <SearchResultHeading>SEARCH RESULTS</SearchResultHeading>
         <ResultsList>
-          {searchResults.map((anime) => <SearchResultItem key={anime.id} {...anime} />)}
+          {searchResults.map((anime) => (
+            <SearchResultItem
+              key={anime.id}
+              handleSearchResultLink={handleSearchResultLink}
+              {...anime}
+            />
+          ))}
         </ResultsList>
       </ModalWrapper>
     )}

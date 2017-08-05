@@ -46,6 +46,7 @@ export default class extends Component {
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.toggleSearch = this.toggleSearch.bind(this);
+    this.handleSearchResultLink = this.handleSearchResultLink.bind(this);
   }
 
   toggleNavbar() {
@@ -54,6 +55,10 @@ export default class extends Component {
 
   toggleSearch() {
     this.setState({ isSearchActive: !this.state.isSearchActive });
+  }
+
+  handleSearchResultLink() {
+    this.setState({ isSearchActive: false });
   }
 
   render(): React$Element<any> {
@@ -76,6 +81,7 @@ export default class extends Component {
               <MobileNav isNavbarActive={isNavbarActive} toggleNavbar={this.toggleNavbar} />
               {<SearchModalContainer
                 isSearchActive={isSearchActive}
+                handleSearchResultLink={this.handleSearchResultLink}
               />}
               <div style={{ height: 'auto', paddingTop: 50, paddingBottom: 100 }}>
                 <Switch>
