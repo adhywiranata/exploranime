@@ -9,7 +9,7 @@ export const ModalWrapper = glamorous.div(
     transition: 'opacity 1s',
     width: '100vw',
     height: '100vh',
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    backgroundColor: colors.white,
     boxSizing: 'border-box',
     paddingTop: 70,
     display: 'flex',
