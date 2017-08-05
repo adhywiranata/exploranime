@@ -39,3 +39,15 @@ export default (state = initialState, { type, payload }) => {
     default: return state;
   }
 };
+
+export const getSearchTerm = (state) => {
+  return state.get('searchTerm');
+};
+
+export const getFetchingStatus = (state) => {
+  return state.get('isFetching');
+};
+
+export const getSearchResults = (state) => {
+  return state.get('searchResultsData').toJS();
+};
