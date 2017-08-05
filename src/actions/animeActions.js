@@ -7,6 +7,7 @@ import {
   FETCH_ANIME_DETAILS_LOADING,
   FETCH_ANIME_DETAILS_SUCCESS,
   FETCH_ANIME_DETAILS_FAILURE,
+  SET_ANIME_SEARCH_TERM,
   FETCH_ANIMES_BY_KEYWORD,
   FETCH_ANIMES_BY_KEYWORD_LOADING,
   FETCH_ANIMES_BY_KEYWORD_SUCCESS,
@@ -54,6 +55,11 @@ export const fetchAnimeDetailsFailure = () => ({
 });
 
 // Action Creators for Fetching Anime Based on Keyword
+export const setAnimeSearchTerm = keyword => ({
+    type: SET_ANIME_SEARCH_TERM,
+    payload: keyword,
+});
+
 export const fetchAnimesByKeyword = keyword => ({
   type: FETCH_ANIMES_BY_KEYWORD,
   payload: keyword,
