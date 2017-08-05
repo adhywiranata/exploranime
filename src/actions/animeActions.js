@@ -8,6 +8,7 @@ import {
   FETCH_ANIME_DETAILS_SUCCESS,
   FETCH_ANIME_DETAILS_FAILURE,
   SET_ANIME_SEARCH_TERM,
+  RESET_ANIME_SEARCH_TERM,
   FETCH_ANIMES_BY_KEYWORD,
   FETCH_ANIMES_BY_KEYWORD_LOADING,
   FETCH_ANIMES_BY_KEYWORD_SUCCESS,
@@ -58,6 +59,10 @@ export const fetchAnimeDetailsFailure = () => ({
 export const setAnimeSearchTerm = keyword => ({
     type: SET_ANIME_SEARCH_TERM,
     payload: keyword,
+});
+
+export const resetAnimeSearchTerm = () => ({
+    type: RESET_ANIME_SEARCH_TERM,
 });
 
 export const fetchAnimesByKeyword = keyword => ({
