@@ -1,4 +1,4 @@
-import React from 'react';
+// @flow
 import { connect } from 'react-redux';
 
 import { getSearchTerm } from '../reducers/animeSearchReducer';
@@ -11,15 +11,4 @@ const mapStateToProps = ({ animeSearch }) => ({
 export default connect(
   mapStateToProps,
   null,
-)(
-  class extends React.Component {
-    render() {
-      return (
-        <MobileSearchModal
-          isSearchActive={this.props.isSearchActive}
-          searchTerm={''}
-        />
-      );
-    }
-  },
-);
+)(MobileSearchModal);
