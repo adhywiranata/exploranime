@@ -1,11 +1,12 @@
 // @flow
 import { connect } from 'react-redux';
 
-import { getSearchTerm, getSearchResults } from '../reducers/animeSearchReducer';
+import { getSearchTerm, getFetchingStatus, getSearchResults } from '../reducers/animeSearchReducer';
 import MobileSearchModal from '../components/core/search/MobileSearchModal';
 
 const mapStateToProps = ({ animeSearch }) => ({
   searchTerm: getSearchTerm(animeSearch),
+  isFetching: getFetchingStatus(animeSearch),
   searchResults: getSearchResults(animeSearch),
 });
 
