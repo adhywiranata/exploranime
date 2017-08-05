@@ -3,6 +3,7 @@ import { fromJS } from 'immutable';
 
 import {
   SET_ANIME_SEARCH_TERM,
+  RESET_ANIME_SEARCH_TERM,
   FETCH_ANIMES_BY_KEYWORD_LOADING,
   FETCH_ANIMES_BY_KEYWORD_SUCCESS,
   FETCH_ANIMES_BY_KEYWORD_FAILURE,
@@ -15,7 +16,15 @@ const initialState = fromJS({
 });
 
 const setSearchTerm = (state, searchTerm) => {
-  return state.set('searchTerm', searchTerm);
+  return state
+  .set('searchTerm', searchTerm)
+  .set('isFetching', true);
+};
+
+const resetSearchTerm = (state) => {
+  return state
+  .set('searchTerm', '')
+  .set('isFetching', false);
 }
 
 const fetchAnimesLoading = (state) => {
@@ -39,6 +48,7 @@ const fetchAnimesFailure = (state) => {
 export default (state = initialState, { type, payload }) => {
   switch(type) {
     case SET_ANIME_SEARCH_TERM: return setSearchTerm(state, payload);
+    case RESET_ANIME_SEARCH_TERM: return resetAnimeSearchTerm(state);
     case FETCH_ANIMES_BY_KEYWORD_LOADING: return fetchAnimesLoading(state);
     case FETCH_ANIMES_BY_KEYWORD_SUCCESS: return fetchAnimesSuccess(state, payload);
     case FETCH_ANIMES_BY_KEYWORD_FAILURE: return fetchAnimesFailure(state);
