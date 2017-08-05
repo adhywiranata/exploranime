@@ -24,28 +24,32 @@ export default connect(
   class extends React.Component {
     constructor(props) {
       super(props);
-      const { isFetching, fetchAnimes, dataCursor } = props;
-      let scrollCursor = dataCursor;
-      document.addEventListener('scroll', () => {
-        const documentHeight = document.body.scrollHeight;
-        const windowHeight = window.innerHeight;
-        const scrollY = document.body.scrollTop;
-
-        if (documentHeight === windowHeight + scrollY) {
-          if (!isFetching) {
-            scrollCursor += 10;
-            fetchAnimes(scrollCursor);
-          }
-        }
-      });
+      this.handleScroll = this.handleScroll.bind(this);
+      document.addEventListener('scroll', this.handleScroll);
     }
 
-    componentWillMount() {
+    handleScroll() {
+      const { isFetching, fetchAnimes, dataCursor } = this.props;
+      let scrollCursor = dataCursor;
 
+      const documentHeight = document.body.scrollHeight;
+      const windowHeight = window.innerHeight;
+      const scrollY = document.body.scrollTop;
+
+      if (documentHeight === windowHeight + scrollY) {
+        if (!isFetching) {
+          scrollCursor += 10;
+          fetchAnimes(scrollCursor);
+        }
+      }
     }
 
     componentDidMount() {
       this.props.fetchAnimes();
+    }
+
+    componentWillUnmount() {
+      document.removeEventListener('scroll', this.handleScroll);
     }
 
     render() {
