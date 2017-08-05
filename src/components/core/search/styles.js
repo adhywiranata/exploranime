@@ -9,10 +9,9 @@ export const ModalWrapper = glamorous.div(
     transition: 'opacity 1s',
     width: '100vw',
     height: '100vh',
-    backgroundColor: colors.white,
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
     boxSizing: 'border-box',
-    padding: 20,
-    paddingTop: 100,
+    paddingTop: 70,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -20,7 +19,7 @@ export const ModalWrapper = glamorous.div(
   },
   ({ isSearchActive }) => ({
     top: isSearchActive ? 0 : '-100vh',
-    opacity: isSearchActive ? 0.96 : 0.1,
+    opacity: isSearchActive ? 1 : 0.1,
   }),
 );
 
