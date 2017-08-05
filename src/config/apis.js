@@ -5,7 +5,7 @@ export const fetchKitsuAnimesPaginated = offset => (
 );
 
 export const fetchKitsuAnimeSearch = keyword => (
-  axios.get(`https://kitsu.io/api/edge/anime?filter[text]=cowboy%20bebop`);
+  axios.get(`https://kitsu.io/api/edge/anime?filter[text]=cowboy%20bebop`)
 );
 
 export const fetchKitsuAnimeDetails = id => (
