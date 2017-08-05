@@ -18,7 +18,7 @@ import store from './configureStore';
 import ListSection from './components/animes/ListSection';
 
 import AnimeDetailsContainer from './containers/AnimeDetailsContainer';
-import SearchContainer from './containers/SearchContainer';
+import SearchModalContainer from './containers/SearchModalContainer';
 
 const history = createHistory();
 
@@ -74,7 +74,7 @@ export default class extends Component {
               />
               <Navbar />
               <MobileNav isNavbarActive={isNavbarActive} toggleNavbar={this.toggleNavbar} />
-              {<SearchContainer
+              {<SearchModalContainer
                 isSearchActive={isSearchActive}
               />}
               <div style={{ height: 'auto', paddingTop: 50, paddingBottom: 100 }}>
