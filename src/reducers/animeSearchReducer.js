@@ -33,9 +33,9 @@ const fetchAnimesFailure = (state) => {
 export default (state = initialState, { type, payload }) => {
   switch(type) {
     case SET_ANIME_SEARCH_TERM: return setSearchTerm(state, payload);
-    case FETCH_ANIMES_LOADING: return fetchAnimesLoading(state);
-    case FETCH_ANIMES_SUCCESS: return fetchAnimesSuccess(state, payload);
-    case FETCH_ANIMES_FAILURE: return fetchAnimesFailure(state);
+    case FETCH_ANIMES_BY_KEYWORD_LOADING: return fetchAnimesLoading(state);
+    case FETCH_ANIMES_BY_KEYWORD_SUCCESS: return fetchAnimesSuccess(state, payload);
+    case FETCH_ANIMES_BY_KEYWORD_FAILURE: return fetchAnimesFailure(state);
     default: return state;
   }
 };
