@@ -1,13 +1,19 @@
 // @flow
 import React from 'react';
 
+import SearchInputContainer from '../../../containers/SearchInputContainer';
 import { PlainLink } from '../Links';
 import NavBurger from './navigation-hamburger.svg';
 import NavSearch from './navigation-search.svg';
 import CloseIcon from './close.svg';
-
-import { HeaderWrapper, LogoBold, LogoReg, HamburgerIcon, SearchIcon, SearchInput,
-CloseSearchIcon, } from './style';
+import {
+  HeaderWrapper,
+  LogoBold,
+  LogoReg,
+  HamburgerIcon,
+  SearchIcon,
+  CloseSearchIcon,
+} from './style';
 
 type Props = {
   isNavbarActive: boolean,
@@ -30,7 +36,7 @@ export default ({ isNavbarActive, isSearchActive, toggleNavbar, toggleSearch }: 
       </PlainLink>
     )}
     {isSearchActive && (
-      <SearchInput type={'text'} placeholder={'Search for animes...'} />
+      <SearchInputContainer type={'text'} placeholder={'Search for animes...'} />
     )}
     <SearchIcon
       src={NavSearch}
