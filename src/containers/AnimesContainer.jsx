@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { getAllAnimes, getFetchingStatus, getAPICursorOffset } from '../reducers/animeReducer';
-import { fetchAnimes } from '../actions/animeActions';
+import { fetchAnimes as fetchAnimesAction } from '../actions/animeActions';
 
 import AnimeList from '../components/animes/AnimeList';
 
@@ -13,8 +13,8 @@ const mapStateToProps = ({ animes }) => ({
   dataCursor: getAPICursorOffset(animes),
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchAnimes: (offset = 0) => dispatch(fetchAnimes(offset)),
+const mapDispatchToProps = dispatch => ({
+  fetchAnimes: (offset = 0) => dispatch(fetchAnimesAction(offset)),
 });
 
 export default connect(
@@ -58,4 +58,4 @@ export default connect(
         <AnimeList animesData={animes} isFetching={isFetching} />
       );
     }
-})
+});
