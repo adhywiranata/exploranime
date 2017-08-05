@@ -17,7 +17,7 @@ export function* fetchAnimesByKeyword(action) {
   const animesData = yield call(fetchKitsuAnimeSearch, action.payload);
   try {
     // TODO handle if no anime id found!
-    yield put(fetchAnimesByKeywordSuccessActionCreator(animesData.data.data[0]));
+    yield put(fetchAnimesByKeywordSuccessActionCreator(animesData.data.data));
   } catch (e) {
     yield put(fetchAnimesByKeywordFailureActionCreator());
   }

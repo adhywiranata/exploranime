@@ -23,7 +23,13 @@ const fetchAnimesLoading = (state) => {
 };
 
 const fetchAnimesSuccess = (state, results) => {
-  return state.set('searchResultsData', fromJS([]));
+  const searchResults = results.map(anime => ({
+    title: anime.attributes.canonicalTitle,
+    image: anime.attributes.posterImage.tiny,
+  }));
+  return state
+  .set('searchResultsData', fromJS(searchResults))
+  .set('isFetching', false);
 };
 
 const fetchAnimesFailure = (state) => {
