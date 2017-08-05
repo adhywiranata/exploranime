@@ -41,3 +41,18 @@ export const BigIcon = glamorous.img(
     // display: isSearchActive ? 'block' : 'none',
   }),
 );
+
+export const SearchResultHeading = glamorous.div({
+  background: colors.blue,
+  width: '100%',
+  color: colors.white,
+  padding: 10,
+  boxSizing: 'border-box',
+});
+
+export const ResultsList = glamorous.div({
+  overflow: 'scroll',
+  height: 'auto',
+  width: '100%',
+  backgroundColor: colors.white,
+});
