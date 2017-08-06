@@ -6,6 +6,12 @@ import DetailSection from '../components/animes/DetailSection';
 import { fetchAnimeDetails } from '../actions/animeActions';
 import { getAnime, getFetchingStatus } from '../reducers/animeDetailsReducer';
 
+type Props = {
+  match: any,
+  fetchAnimeDetails: any,
+  anime: any,
+};
+
 const mapStateToProps = state => ({
   anime: getAnime(state.animeDetails),
   isFetching: getFetchingStatus(state.animeDetails),
@@ -24,6 +30,8 @@ export default connect(
       const animeId = parseInt(this.props.match.params.id, 10);
       this.props.fetchAnimeDetails(animeId);
     }
+
+    props: Props;
 
     render() {
       const { anime } = this.props;

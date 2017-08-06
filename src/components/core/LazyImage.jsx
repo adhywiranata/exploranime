@@ -1,6 +1,12 @@
+// @flow
 import React from 'react';
 
 import { ItemCoverLoading } from '../animes/Item/style';
+
+type Props = {
+  src: string,
+  style: any,
+};
 
 export default class extends React.Component {
   constructor() {
@@ -15,6 +21,8 @@ export default class extends React.Component {
       this.setState({ imgFinishedLoading: true });
     };
   }
+
+  props: Props;
 
   render() {
     const { src, style } = this.props;

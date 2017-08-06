@@ -26,8 +26,8 @@ const font = new FontFaceObserver('Open Sans');
 
 font.load().then(() => {
   // console.log('Open Sans has loaded.');
-}).catch(err => {
-  console.error(err);
+}).catch(() => {
+  // console.error(err);
 });
 
 const AppContainer = glamorous.div({

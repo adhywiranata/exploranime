@@ -3,9 +3,9 @@ import React from 'react';
 
 import { H1 } from '../TextHeadings';
 
-type Prop = { label: string };
+type Props = { label: string };
 
-export default ({ label }: Prop) => {
+export default ({ label }: Props) => {
   const words = label.split(' ');
   const strongLabel = words[0];
   const restLabel = words.slice(1).join(' ');

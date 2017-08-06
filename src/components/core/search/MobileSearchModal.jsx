@@ -1,8 +1,17 @@
+// @flow
 import React from 'react';
 
 import SearchResultItem from './SearchResultItem';
 import { ModalWrapper, SearchHeading, BigIcon, SearchResultHeading, ResultsList } from './styles';
 import searchIcon from './navigation-search.svg';
+
+type Props = {
+  isSearchActive: boolean,
+  handleSearchResultLink: any,
+  isFetching: boolean,
+  searchResults: any,
+  searchTerm: string,
+};
 
 export default ({
   isSearchActive,
@@ -10,7 +19,7 @@ export default ({
   isFetching,
   searchResults,
   searchTerm,
-}) => (
+}: Props) => (
   <ModalWrapper isSearchActive={isSearchActive}>
     { searchTerm === '' && ([
       <BigIcon src={searchIcon} isSearchActive={isSearchActive} />,

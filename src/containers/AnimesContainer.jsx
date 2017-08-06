@@ -7,6 +7,13 @@ import { fetchAnimes as fetchAnimesAction } from '../actions/animeActions';
 
 import AnimeList from '../components/animes/AnimeList';
 
+type Props = {
+  animes: any,
+  isFetching: boolean,
+  dataCursor: number,
+  fetchAnimes: any,
+};
+
 const mapStateToProps = ({ animes }) => ({
   animes: getAllAnimes(animes),
   isFetching: getFetchingStatus(animes),
@@ -27,6 +34,8 @@ export default connect(
       this.handleScroll = this.handleScroll.bind(this);
       document.addEventListener('scroll', this.handleScroll);
     }
+
+    props: Props;
 
     handleScroll() {
       const { isFetching, fetchAnimes, dataCursor } = this.props;

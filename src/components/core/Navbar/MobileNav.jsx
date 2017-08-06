@@ -12,7 +12,9 @@ import {
 
 import closeSvg from './close.svg';
 
-export default ({ isNavbarActive, toggleNavbar }: { isNavbarActive: boolean, toggleNavbar: any }) => (
+type Props = { isNavbarActive: boolean, toggleNavbar: any };
+
+export default ({ isNavbarActive, toggleNavbar }: Props) => (
   <div>
     <Overlay
       onClick={toggleNavbar}

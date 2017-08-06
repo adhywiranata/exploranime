@@ -19,9 +19,15 @@ type Props = {
   isNavbarActive: boolean,
   isSearchActive: boolean,
   toggleNavbar: any,
+  toggleSearch: any,
 };
 
-export default ({ isNavbarActive, isSearchActive, toggleNavbar, toggleSearch }: Props): React$Element<any> => (
+export default ({
+  isNavbarActive,
+  isSearchActive,
+  toggleNavbar,
+  toggleSearch,
+}: Props): React$Element<any> => (
   <HeaderWrapper isSearchActive={isSearchActive}>
     <HamburgerIcon
       src={NavBurger}
