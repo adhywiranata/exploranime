@@ -65,7 +65,7 @@ export const CloseSearchIcon = glamorous.img(
     position: 'absolute',
     right: 10,
   },
-  ({ isNavbarActive, isSearchActive }) => ({
+  ({ isSearchActive }) => ({
     transform: isSearchActive ? '' : 'scale(0,0) rotate(-90deg)',
     // display: isSearchActive ? 'block' : 'block',
   }),
@@ -88,7 +88,4 @@ export const SearchInput = glamorous.input(
       opacity: 0.5,
     },
   },
-  ({ isSearchActive }) => ({
-    // top: isSearchActive ? 50 : 0,
-  }),
 );

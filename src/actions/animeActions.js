@@ -44,12 +44,10 @@ export const fetchAnimeDetailsLoading = () => ({
   type: FETCH_ANIME_DETAILS_LOADING,
 });
 
-export const fetchAnimeDetailsSuccess = animeData => {
-  return {
-    type: FETCH_ANIME_DETAILS_SUCCESS,
-    payload: animeData,
-  }
-};
+export const fetchAnimeDetailsSuccess = animeData => ({
+  type: FETCH_ANIME_DETAILS_SUCCESS,
+  payload: animeData,
+});
 
 export const fetchAnimeDetailsFailure = () => ({
   type: FETCH_ANIME_DETAILS_FAILURE,
@@ -57,12 +55,12 @@ export const fetchAnimeDetailsFailure = () => ({
 
 // Action Creators for Fetching Anime Based on Keyword
 export const setAnimeSearchTerm = keyword => ({
-    type: SET_ANIME_SEARCH_TERM,
-    payload: keyword,
+  type: SET_ANIME_SEARCH_TERM,
+  payload: keyword,
 });
 
 export const resetAnimeSearchTerm = () => ({
-    type: RESET_ANIME_SEARCH_TERM,
+  type: RESET_ANIME_SEARCH_TERM,
 });
 
 export const fetchAnimesByKeyword = keyword => ({
