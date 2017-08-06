@@ -23,7 +23,7 @@ export default ({
     { searchTerm !== '' && !isFetching && searchResults.length > 0 && ([
       <SearchResultHeading>SEARCH RESULTS</SearchResultHeading>,
       <ResultsList>
-        {searchResults.map((anime) => (
+        {searchResults.map(anime => (
           <SearchResultItem
             key={anime.id}
             handleSearchResultLink={handleSearchResultLink}
