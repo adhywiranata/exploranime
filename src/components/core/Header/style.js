@@ -23,16 +23,19 @@ export const HeaderWrapper = glamorous.div(
   }),
 );
 
-export const LogoBold = glamorous.span({
+const logoStyle = {
   fontSize: fontSizeScale.huge,
-  fontWeight: boldScale.bold,
   color: colors.white,
+};
+
+export const LogoBold = glamorous.span({
+  fontWeight: boldScale.bold,
+  ...logoStyle,
 });
 
 export const LogoReg = glamorous.span({
-  fontSize: fontSizeScale.huge,
   fontWeight: boldScale.light,
-  color: colors.white,
+  ...logoStyle,
 });
 
 export const HamburgerIcon = glamorous.img(

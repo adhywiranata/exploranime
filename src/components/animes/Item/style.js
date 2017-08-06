@@ -63,13 +63,13 @@ export const ItemCoverLoading = glamorous.div(coverLoadingAnimation);
 const textStyle = {
   marginTop: 10,
   borderRadius: 20,
+  overflow: 'hidden',
 };
 
 export const ItemTitleWrapper = glamorous.div({
   background: '#3a6073',
   width: '70%',
   height: 20,
-  overflow: 'hidden',
   ...textStyle,
 });
 
@@ -77,7 +77,6 @@ export const ItemScoreWrapper = glamorous.div({
   background: '#F4B350',
   width: '50%',
   height: 15,
-  overflow: 'hidden',
   ...textStyle,
 });
 
