@@ -11,38 +11,30 @@ export default ({
   searchResults,
   searchTerm,
 }) => (
-  <div>
-    { searchTerm === '' && (
-      <ModalWrapper isSearchActive={isSearchActive}>
-        <BigIcon src={searchIcon} isSearchActive={isSearchActive} />
-        <SearchHeading>Search Your Animes Here!</SearchHeading>
-      </ModalWrapper>
-    )}
-    { searchTerm !== '' && (
-      <ModalWrapper isSearchActive={isSearchActive}>
-        <BigIcon src={searchIcon} isSearchActive={isSearchActive} />
-        <SearchHeading>LOADING...</SearchHeading>
-      </ModalWrapper>
-    )}
-    { searchTerm !== '' && !isFetching && (
-      <ModalWrapper isSearchActive={isSearchActive} style={{ justifyContent: 'flex-start', backgroundColor: 'white' }}>
-        <SearchResultHeading>SEARCH RESULTS</SearchResultHeading>
-        <ResultsList>
-          {searchResults.map((anime) => (
-            <SearchResultItem
-              key={anime.id}
-              handleSearchResultLink={handleSearchResultLink}
-              {...anime}
-            />
-          ))}
-        </ResultsList>
-      </ModalWrapper>
-    )}
-    { searchTerm !== '' && !isFetching && searchResults.length === 0 && (
-      <ModalWrapper isSearchActive={isSearchActive}>
-        <BigIcon src={searchIcon} isSearchActive={isSearchActive} />
-        <SearchHeading>Anime not found! Find other animes.</SearchHeading>
-      </ModalWrapper>
-    )}
-  </div>
+  <ModalWrapper isSearchActive={isSearchActive}>
+    { searchTerm === '' && ([
+      <BigIcon src={searchIcon} isSearchActive={isSearchActive} />,
+      <SearchHeading>Search Your Animes Here!</SearchHeading>,
+    ])}
+    { searchTerm !== '' && isFetching && ([
+      <BigIcon src={searchIcon} isSearchActive={isSearchActive} />,
+      <SearchHeading>LOADING...</SearchHeading>,
+    ])}
+    { searchTerm !== '' && !isFetching && searchResults.length > 0 && ([
+      <SearchResultHeading>SEARCH RESULTS</SearchResultHeading>,
+      <ResultsList>
+        {searchResults.map((anime) => (
+          <SearchResultItem
+            key={anime.id}
+            handleSearchResultLink={handleSearchResultLink}
+            {...anime}
+          />
+        ))}
+      </ResultsList>,
+    ])}
+    { searchTerm !== '' && !isFetching && searchResults.length === 0 && ([
+      <BigIcon src={searchIcon} isSearchActive={isSearchActive} />,
+      <SearchHeading>Anime not found! Find other animes.</SearchHeading>,
+    ])}
+  </ModalWrapper>
 );
