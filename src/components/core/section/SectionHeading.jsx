@@ -1,8 +1,11 @@
+// @flow
 import React from 'react';
 
 import { H1 } from '../TextHeadings';
 
-export default ({ label }) => {
+type Prop = { label: string };
+
+export default ({ label }: Prop) => {
   const words = label.split(' ');
   const strongLabel = words[0];
   const restLabel = words.slice(1).join(' ');
@@ -12,4 +15,4 @@ export default ({ label }) => {
       <span style={{ color: '#CCCCCC' }}>{restLabel}</span>
     </H1>
   );
-}
+};
