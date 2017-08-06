@@ -12,13 +12,8 @@ const initialState = fromJS({
   isFetching: false,
 });
 
-const fetchAnimeDetailsLoading = (state) => {
-  return state.set('isFetching', true);
-};
-
-const fetchAnimeDetailsSuccess = (state, anime) => {
-  return state.set('animeData', fromJS(anime));
-};
+const fetchAnimeDetailsLoading = state => state.set('isFetching', true);
+const fetchAnimeDetailsSuccess = (state, anime) => state.set('animeData', fromJS(anime));
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -29,10 +24,5 @@ export default (state = initialState, action) => {
   }
 };
 
-export const getAnime = (state) => {
-  return state.get('animeData').toJS();
-};
-
-export const getFetchingStatus = (state) => {
-  return state.get('isFetching');
-};
+export const getAnime = state => state.get('animeData').toJS();
+export const getFetchingStatus = state => state.get('isFetching');

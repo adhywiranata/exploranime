@@ -15,21 +15,9 @@ const initialState = fromJS({
   isFetching: false,
 });
 
-const setSearchTerm = (state, searchTerm) => {
-  return state
-  .set('searchTerm', searchTerm)
-  .set('isFetching', true);
-};
-
-const resetSearchTerm = (state) => {
-  return state
-  .set('searchTerm', '')
-  .set('isFetching', false);
-}
-
-const fetchAnimesLoading = (state) => {
-  return state.set('isFetching', true);
-};
+const setSearchTerm = (state, searchTerm) => state.set('searchTerm', searchTerm).set('isFetching', true);
+const resetSearchTerm = state => state.set('searchTerm', '').set('isFetching', false);
+const fetchAnimesLoading = state => state.set('isFetching', true);
 
 const fetchAnimesSuccess = (state, results) => {
   const searchResults = results.map(anime => ({
@@ -42,12 +30,10 @@ const fetchAnimesSuccess = (state, results) => {
   .set('isFetching', false);
 };
 
-const fetchAnimesFailure = (state) => {
-  return state;
-};
+const fetchAnimesFailure = state => state;
 
 export default (state = initialState, { type, payload }) => {
-  switch(type) {
+  switch (type) {
     case SET_ANIME_SEARCH_TERM: return setSearchTerm(state, payload);
     case RESET_ANIME_SEARCH_TERM: return resetSearchTerm(state);
     case FETCH_ANIMES_BY_KEYWORD_LOADING: return fetchAnimesLoading(state);
@@ -57,14 +43,6 @@ export default (state = initialState, { type, payload }) => {
   }
 };
 
-export const getSearchTerm = (state) => {
-  return state.get('searchTerm');
-};
-
-export const getFetchingStatus = (state) => {
-  return state.get('isFetching');
-};
-
-export const getSearchResults = (state) => {
-  return state.get('searchResultsData').toJS();
-};
+export const getSearchTerm = state => state.get('searchTerm');
+export const getFetchingStatus = state => state.get('isFetching');
+export const getSearchResults = state => state.get('searchResultsData').toJS();

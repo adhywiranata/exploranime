@@ -10,10 +10,7 @@ const initialState = fromJS({
   isFetching: false,
 });
 
-const fetchAnimesLoading = (state) => {
-  return state.set('isFetching', true);
-};
-
+const fetchAnimesLoading = state => state.set('isFetching', true);
 const fetchAnimesSuccess = (state, animesData) => {
   const newAnimesData = state.get('animesData').concat(fromJS(animesData.data));
   const newDataCursor = state.get('dataCursor') + 10;
@@ -34,14 +31,6 @@ export default (
   }
 };
 
-export const getAllAnimes = (animesState: AnimeStateType) => {
-  return animesState.get('animesData').toArray().map(obj => obj.toJS());
-};
-
-export const getFetchingStatus = (animesState: AnimeStateType) => {
-  return animesState.get('isFetching');
-};
-
-export const getAPICursorOffset = (animeState: AnimeStateType) => {
-  return animeState.get('dataCursor');
-}
+export const getAllAnimes = (animesState: AnimeStateType) => animesState.get('animesData').toArray().map(obj => obj.toJS());
+export const getFetchingStatus = (animesState: AnimeStateType) => animesState.get('isFetching');
+export const getAPICursorOffset = (animeState: AnimeStateType) => animeState.get('dataCursor');
