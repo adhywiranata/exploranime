@@ -5,5 +5,5 @@ engines:
     # ... CONFIG CONTENT ...
     checks:
       import/extensions:
-        enabled: false
+        enabled: true
 # ... CONFIG CONTENT ...
