@@ -60,22 +60,25 @@ const coverLoadingAnimation = () => {
 
 export const ItemCoverLoading = glamorous.div(coverLoadingAnimation);
 
+const textStyle = {
+  marginTop: 10,
+  borderRadius: 20,
+};
+
 export const ItemTitleWrapper = glamorous.div({
   background: '#3a6073',
-  marginTop: 10,
   width: '70%',
-  borderRadius: 20,
   height: 20,
   overflow: 'hidden',
+  ...textStyle,
 });
 
 export const ItemScoreWrapper = glamorous.div({
   background: '#F4B350',
-  marginTop: 10,
   width: '50%',
-  borderRadius: 20,
   height: 15,
   overflow: 'hidden',
+  ...textStyle,
 });
 
 const titleLoadingAnimation = () => {
