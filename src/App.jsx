@@ -36,6 +36,11 @@ const AppContainer = glamorous.div({
   minHeight: '100vh',
 });
 
+type State = {
+  isNavbarActive: boolean,
+  isSearchActive: boolean,
+};
+
 export default class extends Component {
   constructor() {
     super();
@@ -48,6 +53,8 @@ export default class extends Component {
     this.toggleSearch = this.toggleSearch.bind(this);
     this.handleSearchResultLink = this.handleSearchResultLink.bind(this);
   }
+
+  state: State;
 
   toggleNavbar() {
     this.setState({ isNavbarActive: !this.state.isNavbarActive });
