@@ -22,16 +22,16 @@ export default ({
 }: Props) => (
   <ModalWrapper isSearchActive={isSearchActive}>
     { searchTerm === '' && ([
-      <BigIcon src={searchIcon} isSearchActive={isSearchActive} />,
-      <SearchHeading>Search Your Animes Here!</SearchHeading>,
+      <BigIcon src={searchIcon} isSearchActive={isSearchActive} key={1} />,
+      <SearchHeading key={2}>Search Your Animes Here!</SearchHeading>,
     ])}
     { searchTerm !== '' && isFetching && ([
-      <BigIcon src={searchIcon} isSearchActive={isSearchActive} />,
-      <SearchHeading>LOADING...</SearchHeading>,
+      <BigIcon src={searchIcon} isSearchActive={isSearchActive} key={3} />,
+      <SearchHeading key={4}>LOADING...</SearchHeading>,
     ])}
     { searchTerm !== '' && !isFetching && searchResults.length > 0 && ([
-      <SearchResultHeading>SEARCH RESULTS</SearchResultHeading>,
-      <ResultsList>
+      <SearchResultHeading key={5}>SEARCH RESULTS</SearchResultHeading>,
+      <ResultsList key={6}>
         {searchResults.map(anime => (
           <SearchResultItem
             key={anime.id}
@@ -42,8 +42,8 @@ export default ({
       </ResultsList>,
     ])}
     { searchTerm !== '' && !isFetching && searchResults.length === 0 && ([
-      <BigIcon src={searchIcon} isSearchActive={isSearchActive} />,
-      <SearchHeading>Anime not found! Find other animes.</SearchHeading>,
+      <BigIcon src={searchIcon} isSearchActive={isSearchActive} key={7} />,
+      <SearchHeading key={8}>Anime not found! Find other animes.</SearchHeading>,
     ])}
   </ModalWrapper>
 );
