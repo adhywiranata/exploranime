@@ -32,7 +32,7 @@ const fetchAnimesSuccess = (state, results) => {
 
 const fetchAnimesFailure = state => state;
 
-export default (state = initialState, { type, payload }) => {
+export default (state: any = initialState, { type, payload }: { type: string, payload: any }) => {
   switch (type) {
     case SET_ANIME_SEARCH_TERM: return setSearchTerm(state, payload);
     case RESET_ANIME_SEARCH_TERM: return resetSearchTerm(state);
@@ -43,6 +43,6 @@ export default (state = initialState, { type, payload }) => {
   }
 };
 
-export const getSearchTerm = state => state.get('searchTerm');
-export const getFetchingStatus = state => state.get('isFetching');
-export const getSearchResults = state => state.get('searchResultsData').toJS();
+export const getSearchTerm = (state: any) => state.get('searchTerm');
+export const getFetchingStatus = (state: any) => state.get('isFetching');
+export const getSearchResults = (state: any) => state.get('searchResultsData').toJS();
