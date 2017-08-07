@@ -39,7 +39,6 @@ export default connect(
 
     handleScroll() {
       const { isFetching, fetchAnimes, dataCursor } = this.props;
-      let scrollCursor = dataCursor;
 
       const documentHeight = document.body.scrollHeight;
       const windowHeight = window.innerHeight;
@@ -47,7 +46,6 @@ export default connect(
 
       if (documentHeight === windowHeight + scrollY) {
         if (!isFetching) {
-          // scrollCursor += 10;
           fetchAnimes(dataCursor);
         }
       }
