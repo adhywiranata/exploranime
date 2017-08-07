@@ -8,6 +8,7 @@ import createHistory from 'history/createBrowserHistory';
 import glamorous from 'glamorous';
 import FontFaceObserver from 'fontfaceobserver';
 
+import ScrollToTop from './components/core/ScrollToTop';
 import Header from './components/core/Header/';
 import Navbar from './components/core/Navbar';
 import MobileNav from './components/core/Navbar/MobileNav';
@@ -77,27 +78,29 @@ export default class extends Component {
             <Helmet>
               <title>Exploranime</title>
             </Helmet>
-            <AppContainer>
-              <Header
-                isNavbarActive={isNavbarActive}
-                isSearchActive={isSearchActive}
-                toggleNavbar={this.toggleNavbar}
-                toggleSearch={this.toggleSearch}
-              />
-              <Navbar />
-              <MobileNav isNavbarActive={isNavbarActive} toggleNavbar={this.toggleNavbar} />
-              {<SearchModalContainer
-                isSearchActive={isSearchActive}
-                handleSearchResultLink={this.handleSearchResultLink}
-              />}
-              <div style={{ height: 'auto', paddingTop: 50, paddingBottom: 100 }}>
-                <Switch>
-                  <Route exact path={'/'} component={ListSection} />
-                  <Route exact path={'/anime/:id'} component={AnimeDetailsContainer} />
-                </Switch>
-              </div>
-              <Footer />
-            </AppContainer>
+            <ScrollToTop>
+              <AppContainer>
+                <Header
+                  isNavbarActive={isNavbarActive}
+                  isSearchActive={isSearchActive}
+                  toggleNavbar={this.toggleNavbar}
+                  toggleSearch={this.toggleSearch}
+                />
+                <Navbar />
+                <MobileNav isNavbarActive={isNavbarActive} toggleNavbar={this.toggleNavbar} />
+                {<SearchModalContainer
+                  isSearchActive={isSearchActive}
+                  handleSearchResultLink={this.handleSearchResultLink}
+                />}
+                <div style={{ height: 'auto', paddingTop: 50, paddingBottom: 100 }}>
+                  <Switch>
+                    <Route exact path={'/'} component={ListSection} />
+                    <Route exact path={'/anime/:id'} component={AnimeDetailsContainer} />
+                  </Switch>
+                </div>
+                <Footer />
+              </AppContainer>
+            </ScrollToTop>
           </div>
         </ConnectedRouter>
       </Provider>
