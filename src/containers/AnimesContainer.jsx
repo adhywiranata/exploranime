@@ -52,7 +52,9 @@ export default connect(
     }
 
     componentDidMount() {
-      this.props.fetchAnimes();
+      if (this.props.animes.length === 0) {
+        this.props.fetchAnimes();
+      }
     }
 
     componentWillUnmount() {
