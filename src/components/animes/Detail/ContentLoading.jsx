@@ -12,10 +12,12 @@ export default (): React$Element<any> => (
       </div>
 
       <div style={{ padding: '0px 20px', width: '100%' }}>
-        <H3>Summary</H3>
-        <p style={{ color: '#666666', fontSize: '0.8rem', textAlign: 'justify' }}>
-          Loading...
-        </p>
+        <div style={{ background: '#888888', width: '30vw', height: 20, borderRadius: 20, margin: '20px 0' }} />
+        <div style={{ background: '#dddddd', width: '90vw', height: 20, borderRadius: 20, margin: '5px auto' }} />
+        <div style={{ background: '#dddddd', width: '90vw', height: 20, borderRadius: 20, margin: '5px auto' }} />
+        <div style={{ background: '#dddddd', width: '90vw', height: 20, borderRadius: 20, margin: '5px auto' }} />
+        <div style={{ background: '#dddddd', width: '90vw', height: 20, borderRadius: 20, margin: '5px auto' }} />
+        <div style={{ background: '#dddddd', width: '90vw', height: 20, borderRadius: 20, margin: '5px auto' }} />
       </div>
     </div>
   </div>
