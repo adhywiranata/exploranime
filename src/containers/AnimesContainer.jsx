@@ -47,8 +47,8 @@ export default connect(
 
       if (documentHeight === windowHeight + scrollY) {
         if (!isFetching) {
-          scrollCursor += 10;
-          fetchAnimes(scrollCursor);
+          // scrollCursor += 10;
+          fetchAnimes(dataCursor);
         }
       }
     }
