@@ -2,24 +2,31 @@
 import React from 'react';
 
 import Cover from './Detail/Cover';
-import Detail from './Detail/Content';
+import Content from './Detail/Content';
+import CoverLoading from './Detail/CoverLoading';
+import ContentLoading from './Detail/ContentLoading';
 
-// const initialAnime = {
-//   attributes: {
-//     canonicalTitle: '',
-//     coverImage: '',
-//   },
-// };
+type Props = {
+  anime: any,
+  isFetching: boolean,
+};
 
-export default ({ anime }): React$Element<any> => (
+export default ({ anime, isFetching }: Props): React$Element<any> => (
   <div style={{ padding: 0, display: 'flex', flexDirection: 'column' }}>
-    { anime.attributes && (
+    {isFetching && ([
+      <CoverLoading
+        key={1}
+      />,
+      <ContentLoading key={2} />,
+    ])}
+    {!isFetching && anime.attributes && ([
       <Cover
+        key={1}
         title={anime.attributes.canonicalTitle}
         image={anime.attributes.coverImage.original}
         coverPaddingTop={anime.attributes.coverImageTopOffset}
-      />
-    )}
-    <Detail anime={anime} />
+      />,
+      <Content key={2} anime={anime} />,
+    ])}
   </div>
 );

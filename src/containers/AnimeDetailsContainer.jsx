@@ -9,6 +9,7 @@ import { getAnime, getFetchingStatus } from '../reducers/animeDetailsReducer';
 type Props = {
   match: any,
   fetchAnimeDetails: any,
+  isFetching: boolean,
   anime: any,
 };
 
@@ -34,9 +35,9 @@ export default connect(
     props: Props;
 
     render() {
-      const { anime } = this.props;
+      const { anime, isFetching } = this.props;
       return (
-        <DetailSection anime={anime} />
+        <DetailSection anime={anime} isFetching={isFetching} />
       );
     }
   },
