@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 
-import { H3 } from '../../core/TextHeadings';
 import LazyImage from '../../core/LazyImage';
 
 export default (): React$Element<any> => (
