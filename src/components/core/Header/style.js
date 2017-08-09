@@ -67,6 +67,7 @@ export const CloseSearchIcon = glamorous.img(
     transition: '0.2s',
     position: 'absolute',
     right: 10,
+    display: 'block !important',
   },
   ({ isSearchActive }) => ({
     transform: isSearchActive ? '' : 'scale(0,0) rotate(-90deg)',

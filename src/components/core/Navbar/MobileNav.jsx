@@ -24,8 +24,9 @@ export default ({ isNavbarActive, toggleNavbar }: Props) => (
       onClick={toggleNavbar}
       src={closeSvg}
       isNavbarActive={isNavbarActive}
+      className={'hidden-icon'}
     />
-    <Container isNavbarActive={isNavbarActive}>
+    <Container isNavbarActive={isNavbarActive} className={'sidebar'}>
       <Header>
         menu
       </Header>

@@ -35,6 +35,7 @@ export const BigIcon = glamorous.img(
     height: 150,
     transition: '0.5s',
     transform: 'rotate(-90deg) scale(0,0)',
+    display: 'block !important',
   },
   ({ isSearchActive }) => ({
     transform: isSearchActive ? '' : 'rotate(-90deg) scale(0,0)',

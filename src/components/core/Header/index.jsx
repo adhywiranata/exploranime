@@ -28,17 +28,18 @@ export default ({
   toggleNavbar,
   toggleSearch,
 }: Props): React$Element<any> => (
-  <HeaderWrapper isSearchActive={isSearchActive}>
+  <HeaderWrapper isSearchActive={isSearchActive} className={'header'}>
     <HamburgerIcon
       src={NavBurger}
       onClick={toggleNavbar}
       isSearchActive={isSearchActive}
       alt={'nav'}
+      className={'nav-icon'}
     />
     {!isSearchActive && (
       <PlainLink to={'/'}>
-        <LogoBold>Explor</LogoBold>
-        <LogoReg>anime</LogoReg>
+        <LogoBold className={'logo'}>Explor</LogoBold>
+        <LogoReg className={'logo'}>anime</LogoReg>
       </PlainLink>
     )}
     {isSearchActive && (
@@ -50,6 +51,7 @@ export default ({
       isNavbarActive={isNavbarActive}
       isSearchActive={isSearchActive}
       onClick={toggleSearch}
+      className={'nav-icon'}
     />
     <CloseSearchIcon
       src={CloseIcon}
@@ -57,6 +59,7 @@ export default ({
       isNavbarActive={isNavbarActive}
       isSearchActive={isSearchActive}
       onClick={toggleSearch}
+      className={'nav-icon hidden-icon'}
     />
   </HeaderWrapper>
 );

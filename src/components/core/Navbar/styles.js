@@ -57,6 +57,7 @@ export const CloseIcon = glamorous.img(
     height: 30,
     transition: '0.2s',
     top: 20,
+    display: 'block !important',
   },
   ({ isNavbarActive }) => ({
     // display: isNavbarActive ? 'block' : 'none',

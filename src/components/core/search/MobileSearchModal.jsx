@@ -22,7 +22,7 @@ export default ({
 }: Props) => (
   <ModalWrapper isSearchActive={isSearchActive}>
     { searchTerm === '' && ([
-      <BigIcon src={searchIcon} isSearchActive={isSearchActive} key={1} />,
+      <BigIcon src={searchIcon} isSearchActive={isSearchActive} key={1} className={'hidden-icon'} />,
       <SearchHeading key={2}>Search Your Animes Here!</SearchHeading>,
     ])}
     { searchTerm !== '' && isFetching && ([
@@ -42,7 +42,7 @@ export default ({
       </ResultsList>,
     ])}
     { searchTerm !== '' && !isFetching && searchResults.length === 0 && ([
-      <BigIcon src={searchIcon} isSearchActive={isSearchActive} key={7} />,
+      <BigIcon src={searchIcon} isSearchActive={isSearchActive} key={7} className={'hidden-icon'} />,
       <SearchHeading key={8}>Anime not found! Find other animes.</SearchHeading>,
     ])}
   </ModalWrapper>
