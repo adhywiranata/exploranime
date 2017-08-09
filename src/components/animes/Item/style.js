@@ -25,7 +25,7 @@ export const ItemWrapper = glamorous.div({
 });
 
 export const Score = glamorous.span({
-  color: '#F4B350',
+  color: '#D35400',
   fontSize: '1.7rem',
   fontWeight: '700',
 });
@@ -74,7 +74,7 @@ export const ItemTitleWrapper = glamorous.div({
 });
 
 export const ItemScoreWrapper = glamorous.div({
-  background: '#F4B350',
+  background: '#D35400',
   width: '50%',
   height: 15,
   ...textStyle,

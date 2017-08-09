@@ -12,7 +12,7 @@ export default ({ label }: Props) => {
   return (
     <H1 style={{ borderBottom: '1px solid rgba(0,0,0,0.03)', marginTop: 30 }}>
       <strong>{strongLabel}</strong>
-      <span style={{ color: '#CCCCCC' }}>{restLabel}</span>
+      <span>{restLabel}</span>
     </H1>
   );
 };

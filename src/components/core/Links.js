@@ -6,7 +6,7 @@ import { colors } from '../../config/themeConstants';
 
 export const Link = glamorous(RouterLink)({
   textDecoration: 'none',
-  color: colors.blue,
+  color: colors.darkBlue,
 });
 
 export const PlainLink = glamorous(RouterLink)({
