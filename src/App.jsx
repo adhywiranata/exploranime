@@ -5,20 +5,17 @@ import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
-import glamorous from 'glamorous';
 import FontFaceObserver from 'fontfaceobserver';
-
+import { LazyComponent } from 'react-code-split-component';
 import ScrollToTop from './components/core/ScrollToTop';
 import Header from './components/core/Header/';
-import Navbar from './components/core/Navbar';
 import MobileNav from './components/core/Navbar/MobileNav';
 // import MobileSearchModal from './components/core/search/MobileSearchModal';
 import Footer from './components/core/Footer/';
 import store from './configureStore';
 
-import ListSection from './components/animes/ListSection';
-
-import AnimeDetailsContainer from './containers/AnimeDetailsContainer';
+// import ListSection from './components/animes/ListSection';
+// import AnimeDetailsContainer from './containers/AnimeDetailsContainer';
 import SearchModalContainer from './containers/SearchModalContainer';
 
 const history = createHistory();
@@ -29,12 +26,6 @@ font.load().then(() => {
   // console.log('Open Sans has loaded.');
 }).catch(() => {
   // console.error(err);
-});
-
-const AppContainer = glamorous.div({
-  fontFamily: 'Open Sans',
-  position: 'relative',
-  minHeight: '100vh',
 });
 
 type State = {
@@ -79,27 +70,32 @@ export default class extends Component {
               <title>Exploranime</title>
             </Helmet>
             <ScrollToTop>
-              <AppContainer>
+              <div style={{
+                fontFamily: 'Open Sans',
+                position: 'relative',
+                minHeight: '100vh',
+              }}
+              >
                 <Header
                   isNavbarActive={isNavbarActive}
                   isSearchActive={isSearchActive}
                   toggleNavbar={this.toggleNavbar}
                   toggleSearch={this.toggleSearch}
                 />
-                <Navbar />
+                <LazyComponent load={() => import('./components/core/Navbar')} />
                 <MobileNav isNavbarActive={isNavbarActive} toggleNavbar={this.toggleNavbar} />
-                {<SearchModalContainer
+                <SearchModalContainer
                   isSearchActive={isSearchActive}
                   handleSearchResultLink={this.handleSearchResultLink}
-                />}
+                />
                 <div style={{ height: 'auto', paddingTop: 50, paddingBottom: 100 }}>
                   <Switch>
-                    <Route exact path={'/'} component={ListSection} />
-                    <Route exact path={'/anime/:id'} component={AnimeDetailsContainer} />
+                    <Route exact path={'/'} component={props => <LazyComponent load={() => import('./components/animes/ListSection')} {...props} />} />
+                    <Route exact path={'/anime/:id'} component={props => <LazyComponent load={() => import('./containers/AnimeDetailsContainer')} {...props} />} />
                   </Switch>
                 </div>
                 <Footer />
-              </AppContainer>
+              </div>
             </ScrollToTop>
           </div>
         </ConnectedRouter>
