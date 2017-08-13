@@ -14,8 +14,9 @@ export const fetchAnimesCharacters = animeId => ({
   payload: animeId,
 });
 
-export const fetchAnimesCharactersLoading = () => ({
+export const fetchAnimesCharactersLoading = animeId => ({
   type: FETCH_ANIMES_CHARACTERS_BY_ANIME_LOADING,
+  payload: animeId,
 });
 
 export const fetchAnimesCharactersSuccess = characters => ({
@@ -32,15 +33,17 @@ export const fetchAnimeCharacterDetails = characterId => ({
   payload: characterId,
 });
 
-export const fetchAnimeCharacterDetailsLoading = () => ({
+export const fetchAnimeCharacterDetailsLoading = characterId => ({
   type: FETCH_ANIME_CHARACTER_DETAILS_LOADING,
+  payload: characterId,
 });
 
-export const fetchAnimeCharacterDetailsSuccess = character => ({
+export const fetchAnimeCharacterDetailsSuccess = (characterId, character) => ({
   type: FETCH_ANIME_CHARACTER_DETAILS_SUCCESS,
-  payload: character,
+  payload: { characterId, character },
 });
 
-export const fetchAnimeCharacterDetailsFailure = () => ({
+export const fetchAnimeCharacterDetailsFailure = characterId => ({
   type: FETCH_ANIME_CHARACTER_DETAILS_FAILURE,
+  payload: characterId,
 });
