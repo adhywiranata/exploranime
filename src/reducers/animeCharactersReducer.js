@@ -7,8 +7,6 @@ import {
   FETCH_ANIMES_CHARACTERS_BY_ANIME_FAILURE as FETCH_CHARACTERS_FAILURE,
 } from '../actions/constants';
 
-console.log(FETCH_CHARACTERS_SUCCESS);
-
 const initialState = fromJS({
   charactersData: [],
   isFetching: false,
