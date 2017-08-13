@@ -32,3 +32,11 @@ export const ExpandContentText = glamorous.span({
   color: '#3A6073',
   width: '100%',
 });
+
+export const LoadingText = glamorous.div({
+  background: '#e5e5e5',
+  width: '100%',
+  height: 20,
+  borderRadius: 20,
+  margin: '20px 0',
+});
