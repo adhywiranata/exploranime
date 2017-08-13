@@ -11,6 +11,10 @@ import {
   DetailContentWrapper,
   DetailContent,
   ExpandContentText,
+  LoadingText,
+  CharacterWrapper,
+  CharacterAvatar,
+  CharacterDescription,
 } from '../styles';
 
 import { fetchAnimesCharacters } from '../../../../actions/animeCharacterActions';
@@ -18,18 +22,31 @@ import { fetchAnimesCharacters } from '../../../../actions/animeCharacterActions
 const Characters = ({ characters, description }) => (
   <DetailSectionWrapper>
     <H3>Characters</H3>
-    <DetailContentWrapper>
+    <DetailContentWrapper style={{ flexDirection: 'column' }}>
       {JSON.stringify(characters)}
-      <div style={{ flex: 1, paddingTop: 10, paddingRight: 5 }}>
-        <LazyImage src={'https://media.kitsu.io/characters/images/57048/original.jpg?1483096805'} width={'100%'} alt={'img'} />
-      </div>
-      <div style={{ flex: 3, padding: 10, borderLeft: '1px solid rgba(0,0,0,0.1)', height: 100, overflow: 'hidden', position: 'relative' }}>
-        <span>Saitama</span>
-        <DetailContent>
-          <ExpandContentText>See More</ExpandContentText>
-          {description.split('<br />').map((desc, index) => <p key={index}>{desc}</p>)}
-        </DetailContent>
-      </div>
+      <CharacterWrapper>
+        <CharacterAvatar>
+          <LazyImage src={''} width={'100%'} alt={'img'} style={{ height: 100 }} />
+        </CharacterAvatar>
+        <CharacterDescription>
+          <LoadingText style={{ width: '50%' }} />
+          <DetailContent>
+            <LoadingText />
+          </DetailContent>
+        </CharacterDescription>
+      </CharacterWrapper>
+      <CharacterWrapper>
+        <CharacterAvatar>
+          <LazyImage src={'https://media.kitsu.io/characters/images/57048/original.jpg?1483096805'} width={'100%'} alt={'img'} />
+        </CharacterAvatar>
+        <CharacterDescription>
+          <span>Saitama</span>
+          <DetailContent>
+            <ExpandContentText>See More</ExpandContentText>
+            {description.split('<br />').map((desc, index) => <p key={index}>{desc}</p>)}
+          </DetailContent>
+        </CharacterDescription>
+      </CharacterWrapper>
     </DetailContentWrapper>
   </DetailSectionWrapper>
 );
