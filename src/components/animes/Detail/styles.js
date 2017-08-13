@@ -18,7 +18,7 @@ export const DetailContentWrapper = glamorous.div({
   flexDirection: 'row',
 });
 
-export const DetailContent = glamorous.p({
+export const DetailContent = glamorous.div({
   color: '#666666',
   fontSize: '0.8rem',
   textAlign: 'justify',
