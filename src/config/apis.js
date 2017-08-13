@@ -11,3 +11,7 @@ export const fetchKitsuAnimeSearch = keyword => (
 export const fetchKitsuAnimeDetails = id => (
   axios.get(`https://kitsu.io/api/edge/anime?filter[id]=${id}`)
 );
+
+export const fetchKitsuAnimeCharactersByKeyword = () => (
+  axios.get(`https://kitsu.io/api/edge/anime-characters/${36317}/character`)
+);
