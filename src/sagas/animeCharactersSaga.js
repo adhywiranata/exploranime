@@ -7,15 +7,16 @@ import {
 } from '../actions/animeCharacterActions';
 
 import {
-  fetchKitsuAnimeCharactersByKeyword,
+  fetchKitsuAnimeCharactersByAnimeId,
 } from '../config/apis';
 
 import { FETCH_ANIMES_CHARACTERS_BY_ANIME } from '../actions/constants';
 
 export function* fetchAnimeCharacters(action) {
   yield put(fetchCharactersLoadingActionCreator());
-  const animesData = yield call(fetchKitsuAnimeCharactersByKeyword, action.payload);
+  const animesData = yield call(fetchKitsuAnimeCharactersByAnimeId, action.payload);
   try {
+    console.log(animesData);
     yield put(fetchCharactersSuccessActionCreator(animesData.data));
   } catch (e) {
     yield put(fetchCharactersFailureActionCreator());

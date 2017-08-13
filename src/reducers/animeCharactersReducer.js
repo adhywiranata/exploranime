@@ -14,9 +14,9 @@ const initialState = fromJS({
 });
 
 const fetchCharacters = state => state.set('isFetching', true);
-const fetchCharactersSuccess = (state, characters) => state
+const fetchCharactersSuccess = (state, characters) => { console.log('YEAHHHHH ' + characters); return state
   .set('charactersData', fromJS(characters))
-  .set('isFetching', false);
+  .set('isFetching', false); }
 const fetchCharactersFailure = state => state.set('isError', true);
 
 export default (state = initialState, action) => {
@@ -27,3 +27,5 @@ export default (state = initialState, action) => {
     default: return state;
   }
 };
+
+export const getCharacters = state => state.get('charactersData').toJS();

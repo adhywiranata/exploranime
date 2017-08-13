@@ -12,6 +12,10 @@ export const fetchKitsuAnimeDetails = id => (
   axios.get(`https://kitsu.io/api/edge/anime?filter[id]=${id}`)
 );
 
-export const fetchKitsuAnimeCharactersByKeyword = () => (
-  axios.get(`https://kitsu.io/api/edge/anime-characters/${36317}/character`)
+export const fetchKitsuAnimeCharactersByAnimeId = animeId => (
+  axios.get(`https://kitsu.io/api/edge/anime/${animeId}/anime-characters`)
+);
+
+export const fetchKitsuAnimeCharacterById = id => (
+  axios.get(`https://kitsu.io/api/edge/anime-characters/${id}/character`)
 );
