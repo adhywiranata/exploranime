@@ -31,3 +31,4 @@ export default (state = initialState, action) => {
 };
 
 export const getCharacters = state => state.get('charactersData').toJS();
+export const getFetchingStatus = state => state.get('isFetching');

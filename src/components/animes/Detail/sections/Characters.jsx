@@ -2,7 +2,7 @@ import React from 'react';
 import { compose, lifecycle } from 'recompose';
 import { connect } from 'react-redux';
 
-import { getCharacters } from '../../../../reducers/animeCharactersReducer';
+import { getCharacters, getFetchingStatus } from '../../../../reducers/animeCharactersReducer';
 import { H3 } from '../../../core/TextHeadings';
 import LazyImage from '../../../core/LazyImage';
 
@@ -19,7 +19,7 @@ import {
 
 import { fetchAnimesCharacters } from '../../../../actions/animeCharacterActions';
 
-const Characters = ({ characters, description }) => (
+const Characters = ({ characters, isFetching, description }) => (
   <DetailSectionWrapper>
     <H3>Characters</H3>
     <DetailContentWrapper style={{ flexDirection: 'column' }}>
@@ -58,8 +58,9 @@ const componentLifeCycle = {
   },
 };
 
-const mapStateToProps = state => ({
-  characters: getCharacters(state.animeCharacters),
+const mapStateToProps = ({ animeCharacters }) => ({
+  characters: getCharacters(animeCharacters),
+  isFetching: getFetchingStatus(animeCharacters),
   description: `
       Race: Human <br />
       Age: 25<br />
