@@ -2,52 +2,28 @@ import React from 'react';
 import { compose, lifecycle } from 'recompose';
 import { connect } from 'react-redux';
 
-import { getCharacters, getFetchingStatus } from '../../../../reducers/animeCharactersReducer';
-import { H3 } from '../../../core/TextHeadings';
-import LazyImage from '../../../core/LazyImage';
+import { getCharacters, getFetchingStatus } from '../../../../../reducers/animeCharactersReducer';
+import { H3 } from '../../../../core/TextHeadings';
+
+import CharacterLoading from './CharacterLoading';
+import Character from './Character';
 
 import {
   DetailSectionWrapper,
   DetailContentWrapper,
-  DetailContent,
-  ExpandContentText,
-  LoadingText,
-  CharacterWrapper,
-  CharacterAvatar,
-  CharacterDescription,
-} from '../styles';
+} from '../../styles';
 
-import { fetchAnimesCharacters } from '../../../../actions/animeCharacterActions';
+import { fetchAnimesCharacters } from '../../../../../actions/animeCharacterActions';
 
 const Characters = ({ characters, isFetching, description }) => (
   <DetailSectionWrapper>
     <H3>Characters</H3>
     <DetailContentWrapper style={{ flexDirection: 'column' }}>
-      {characters.map(character => (
-        <CharacterWrapper key={character.id}>
-          <CharacterAvatar>
-            <LazyImage src={''} width={'100%'} alt={'img'} style={{ height: 100 }} />
-          </CharacterAvatar>
-          <CharacterDescription>
-            <LoadingText style={{ width: '50%' }} />
-            <DetailContent>
-              <LoadingText />
-            </DetailContent>
-          </CharacterDescription>
-        </CharacterWrapper>
+      {isFetching && <CharacterLoading />}
+      {!isFetching && characters.map(character => (
+        <CharacterLoading key={character.id} />
       ))}
-      <CharacterWrapper>
-        <CharacterAvatar>
-          <LazyImage src={'https://media.kitsu.io/characters/images/57048/original.jpg?1483096805'} width={'100%'} alt={'img'} />
-        </CharacterAvatar>
-        <CharacterDescription>
-          <span>Saitama</span>
-          <DetailContent>
-            <ExpandContentText>See More</ExpandContentText>
-            {description.split('<br />').map((desc, index) => <p key={index}>{desc}</p>)}
-          </DetailContent>
-        </CharacterDescription>
-      </CharacterWrapper>
+      <Character description={description} />
     </DetailContentWrapper>
   </DetailSectionWrapper>
 );
