@@ -3,6 +3,7 @@ import {
   FETCH_ANIMES_CHARACTERS_BY_ANIME_LOADING,
   FETCH_ANIMES_CHARACTERS_BY_ANIME_SUCCESS,
   FETCH_ANIMES_CHARACTERS_BY_ANIME_FAILURE,
+  FETCH_ANIME_CHARACTER_DETAILS,
 } from './constants';
 
 export const fetchAnimesCharacters = animeId => ({
@@ -21,4 +22,9 @@ export const fetchAnimesCharactersSuccess = characters => ({
 
 export const fetchAnimesCharactersFailure = () => ({
   type: FETCH_ANIMES_CHARACTERS_BY_ANIME_FAILURE,
+});
+
+export const fetchAnimeCharacterDetails = characterId => ({
+  type: FETCH_ANIME_CHARACTER_DETAILS,
+  payload: characterId,
 });
