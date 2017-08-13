@@ -36,7 +36,7 @@ export const fetchAnimeCharacterDetailsLoading = () => ({
   type: FETCH_ANIME_CHARACTER_DETAILS_LOADING,
 });
 
-export const fetchAnimeCharacterDetailsSuccess = (character) => ({
+export const fetchAnimeCharacterDetailsSuccess = character => ({
   type: FETCH_ANIME_CHARACTER_DETAILS_SUCCESS,
   payload: character,
 });
