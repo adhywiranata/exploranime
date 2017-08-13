@@ -14,8 +14,8 @@ const initialState = fromJS({
 
 const fetchAnimeDetailsLoading = state => state.set('isFetching', true);
 const fetchAnimeDetailsSuccess = (state: any, anime: any) => state
-                                                            .set('animeData', fromJS(anime))
-                                                            .set('isFetching', false);
+  .set('animeData', fromJS(anime))
+  .set('isFetching', false);
 
 export default (state = initialState, action) => {
   switch (action.type) {
