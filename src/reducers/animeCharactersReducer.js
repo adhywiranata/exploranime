@@ -7,6 +7,8 @@ import {
   FETCH_ANIMES_CHARACTERS_BY_ANIME_FAILURE as FETCH_CHARACTERS_FAILURE,
 } from '../actions/constants';
 
+console.log(FETCH_CHARACTERS_SUCCESS);
+
 const initialState = fromJS({
   charactersData: [],
   isFetching: false,
@@ -14,13 +16,13 @@ const initialState = fromJS({
 });
 
 const fetchCharacters = state => state.set('isFetching', true);
-const fetchCharactersSuccess = (state, characters) => { console.log('YEAHHHHH ' + characters); return state
+const fetchCharactersSuccess = (state, characters) => state
   .set('charactersData', fromJS(characters))
-  .set('isFetching', false); }
+  .set('isFetching', false);
 const fetchCharactersFailure = state => state.set('isError', true);
 
 export default (state = initialState, action) => {
-  switch (action.payload) {
+  switch (action.type) {
     case FETCH_CHARACTERS_LOADING: return fetchCharacters(state);
     case FETCH_CHARACTERS_SUCCESS: return fetchCharactersSuccess(state, action.payload);
     case FETCH_CHARACTERS_FAILURE: return fetchCharactersFailure(state);

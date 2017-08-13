@@ -16,8 +16,7 @@ export function* fetchAnimeCharacters(action) {
   yield put(fetchCharactersLoadingActionCreator());
   const animesData = yield call(fetchKitsuAnimeCharactersByAnimeId, action.payload);
   try {
-    console.log(animesData);
-    yield put(fetchCharactersSuccessActionCreator(animesData.data));
+    yield put(fetchCharactersSuccessActionCreator(animesData.data.data));
   } catch (e) {
     yield put(fetchCharactersFailureActionCreator());
   }

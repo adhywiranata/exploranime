@@ -23,18 +23,19 @@ const Characters = ({ characters, description }) => (
   <DetailSectionWrapper>
     <H3>Characters</H3>
     <DetailContentWrapper style={{ flexDirection: 'column' }}>
-      {JSON.stringify(characters)}
-      <CharacterWrapper>
-        <CharacterAvatar>
-          <LazyImage src={''} width={'100%'} alt={'img'} style={{ height: 100 }} />
-        </CharacterAvatar>
-        <CharacterDescription>
-          <LoadingText style={{ width: '50%' }} />
-          <DetailContent>
-            <LoadingText />
-          </DetailContent>
-        </CharacterDescription>
-      </CharacterWrapper>
+      {characters.map(character => (
+        <CharacterWrapper key={character.id}>
+          <CharacterAvatar>
+            <LazyImage src={''} width={'100%'} alt={'img'} style={{ height: 100 }} />
+          </CharacterAvatar>
+          <CharacterDescription>
+            <LoadingText style={{ width: '50%' }} />
+            <DetailContent>
+              <LoadingText />
+            </DetailContent>
+          </CharacterDescription>
+        </CharacterWrapper>
+      ))}
       <CharacterWrapper>
         <CharacterAvatar>
           <LazyImage src={'https://media.kitsu.io/characters/images/57048/original.jpg?1483096805'} width={'100%'} alt={'img'} />
