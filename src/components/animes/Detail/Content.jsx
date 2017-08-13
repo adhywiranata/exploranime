@@ -28,7 +28,7 @@ export default ({ anime }): React$Element<any> => (
         </DetailSectionWrapper>
 
         <CharactersVideo />
-        <CharactersSection />
+        <CharactersSection animeId={anime.id} />
 
         <DetailSectionWrapper>
           <H3>Related Toys</H3>

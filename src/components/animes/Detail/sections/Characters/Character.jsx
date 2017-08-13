@@ -9,16 +9,25 @@ import {
 } from '../../styles';
 import LazyImage from '../../../../core/LazyImage';
 
-export default ({ description }) => (
+export default ({ name, image, description = '' }) => (
   <CharacterWrapper>
     <CharacterAvatar>
-      <LazyImage src={'https://media.kitsu.io/characters/images/57048/original.jpg?1483096805'} width={'100%'} alt={'img'} />
+      {image.original !== null && (<LazyImage src={image.original} width={'100%'} alt={'img'} style={{ height: 114 }} />)}
+      {image.original === null && (<div style={{ background: 'black', height: 114, width: '100%' }} />)}
     </CharacterAvatar>
     <CharacterDescription>
-      <span>Saitama</span>
+      <span>{name}</span>
       <DetailContent>
         <ExpandContentText>See More</ExpandContentText>
-        {description.split('<br />').map((desc, index) => <p key={index}>{desc}</p>)}
+        {typeof (description) === 'string' && description
+          .split('<br/>')
+          .join('<br />')
+          .split('<span class="spoiler">')
+          .join('')
+          .split('</span>')
+          .join('')
+          .split('<br />')
+          .map((desc, index) => <p key={index}>{desc}</p>)}
       </DetailContent>
     </CharacterDescription>
   </CharacterWrapper>
