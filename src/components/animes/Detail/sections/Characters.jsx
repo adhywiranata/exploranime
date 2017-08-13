@@ -1,4 +1,6 @@
 import React from 'react';
+import { compose, lifecycle } from 'recompose';
+import { connect } from 'react-redux';
 
 import { H3 } from '../../../core/TextHeadings';
 import LazyImage from '../../../core/LazyImage';
@@ -10,7 +12,7 @@ import {
   ExpandContentText,
 } from '../styles';
 
-export default () => (
+const Characters = () => (
   <DetailSectionWrapper>
     <H3>Characters</H3>
     <DetailContentWrapper>
@@ -40,3 +42,17 @@ export default () => (
     </DetailContentWrapper>
   </DetailSectionWrapper>
 );
+
+const componentLifeCycle = {
+  componentDidMount() {
+    console.log('did mount!');
+  }
+};
+
+const mapStateToProps = () => ({});
+const mapDispatchToProps = () => ({});
+
+export default compose(
+  lifecycle(componentLifeCycle),
+  connect(mapStateToProps, mapDispatchToProps),
+)(Characters);
