@@ -1,5 +1,6 @@
 // @flow
 import { fromJS } from 'immutable';
+import { createSelector } from 'reselect';
 
 import {
   FETCH_ANIMES_CHARACTERS_BY_ANIME_LOADING as FETCH_CHARACTERS_LOADING,
@@ -82,3 +83,17 @@ export const getCharacterFetchingStatus = (state, charId) => {
   }
   return false;
 };
+
+// export const getCharacterFetchingStatus = createSelector(
+//   getCharacters,
+//   (characters, charId) => {
+//     console.log('====== the selectors ====');
+//     console.log(characters);
+//     console.log(charId);
+//     const char = characters.filter(character => character.id === charId)[0];
+//     if (char.isFetching) {
+//       return char.isFetching;
+//     }
+//     return false;
+//   },
+// );
