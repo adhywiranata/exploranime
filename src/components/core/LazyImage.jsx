@@ -14,12 +14,18 @@ export default class extends React.Component {
     this.state = {
       imgFinishedLoading: false,
     };
+
+    this.finishLoadImage = this.finishLoadImage.bind(this);
   }
 
   componentDidMount() {
-    this.img.onload = () => {
+    this.img.addEventListener('load', this.finishLoadImage);
+  }
+
+  finishLoadImage() {
+    if (this.img) {
       this.setState({ imgFinishedLoading: true });
-    };
+    }
   }
 
   props: Props;
