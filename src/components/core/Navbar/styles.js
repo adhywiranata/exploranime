@@ -25,6 +25,9 @@ export const MobileNavContainer = glamorous.div(
     zIndex: zScale.topMost,
     boxShadow: `3px 1px 10px 1px ${colors.shadeLight}`,
     transition: 'left 0.3s',
+    '@media(min-width: 768px)': {
+      width: '30vw',
+    },
   },
   ({ isNavbarActive }) => ({
     left: isNavbarActive ? 0 : '-80vw',
