@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { compose, lifecycle } from 'recompose';
 import { connect } from 'react-redux';
@@ -6,7 +7,6 @@ import { getCharacters, getFetchingStatus } from '../../../../../reducers/animeC
 import { H3 } from '../../../../core/TextHeadings';
 
 import CharacterLoading from './CharacterLoading';
-// import Character from './Character';
 import CharacterContainer from './CharacterContainer';
 
 import {
@@ -16,7 +16,12 @@ import {
 
 import { fetchAnimesCharacters } from '../../../../../actions/animeCharacterActions';
 
-const Characters = ({ characters, isFetching }) => (
+type Props = {
+  characters: any,
+  isFetching: boolean,
+};
+
+const Characters = ({ characters, isFetching }: Props) => (
   <DetailSectionWrapper>
     <H3>Characters</H3>
     <DetailContentWrapper style={{ flexDirection: 'column' }}>

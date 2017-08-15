@@ -21,4 +21,4 @@ export default () => (
       </DetailContent>
     </CharacterDescription>
   </CharacterWrapper>
-)
+);

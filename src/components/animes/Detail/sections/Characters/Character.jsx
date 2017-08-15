@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 
 import {
@@ -9,7 +10,13 @@ import {
 } from '../../styles';
 import LazyImage from '../../../../core/LazyImage';
 
-export default ({ name, image, description = '' }) => (
+type Props = {
+  name: string,
+  image: string,
+  description: string,
+};
+
+export default ({ name, image, description = '' }: Props) => (
   <CharacterWrapper>
     <CharacterAvatar>
       {image.original !== null && (<LazyImage src={image.original} width={'100%'} alt={'img'} style={{ height: 114 }} />)}
