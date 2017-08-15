@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { compose, lifecycle } from 'recompose';
 import { connect } from 'react-redux';
@@ -10,14 +11,17 @@ import {
   getCharacterFetchingStatus,
 } from '../../../../../reducers/animeCharactersReducer';
 
-const CharacterContainer = ({ character, characterData, isFetching }) => {
-  return (
-    <div>
-      {isFetching && <CharacterLoading />}
-      {!isFetching && characterData !== null && <Character {...characterData.attributes} />}
-    </div>
-  );
+type Props = {
+  characterData: any,
+  isFetching: any,
 };
+
+const CharacterContainer = ({ characterData, isFetching }: Props) => (
+  <div>
+    {isFetching && <CharacterLoading />}
+    {!isFetching && characterData !== null && <Character {...characterData.attributes} />}
+  </div>
+);
 
 const mapStateToProps = (state, ownProps) => ({
   characterData: getCharacterDetails(state.animeCharacters, ownProps.character.id),
@@ -34,7 +38,6 @@ const componentLifeCycle = {
 };
 
 export default compose(
-  // characterBranch,
   connect(mapStateToProps, mapDispatchToProps),
-  lifecycle(componentLifeCycle)
+  lifecycle(componentLifeCycle),
 )(CharacterContainer);
