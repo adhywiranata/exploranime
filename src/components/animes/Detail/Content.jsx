@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 
 import { H3 } from '../../core/TextHeadings';
@@ -12,7 +13,11 @@ import {
 import CharactersSection from './sections/Characters';
 import CharactersVideo from './sections/Video';
 
-export default ({ anime }): React$Element<any> => (
+type Props = {
+  anime: any,
+};
+
+export default ({ anime }: Props): React$Element<any> => (
   <div>
     { anime.attributes && (
       <DetailWrapper>

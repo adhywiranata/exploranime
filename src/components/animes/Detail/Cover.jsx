@@ -3,7 +3,12 @@ import React from 'react';
 
 import { H2 } from '../../core/TextHeadings';
 
-export default ({ title, image, coverPaddingTop }) => (
+type Props = {
+  title: string,
+  image: string,
+};
+
+export default ({ title, image }: Props) => (
   <div style={{
     background: `url(${image})`,
     height: 60,
@@ -12,8 +17,9 @@ export default ({ title, image, coverPaddingTop }) => (
     backgroundAttachment: 'fixed',
     backgroundSize: 'contain',
     position: 'relative',
-    backgroundPosition: `0 40px`,
-  }}>
+    backgroundPosition: '0 40px',
+  }}
+  >
     <div style={{
       background: 'rgba(0,0,0,0.5)',
       width: '100%',
@@ -22,7 +28,8 @@ export default ({ title, image, coverPaddingTop }) => (
       padding: 30,
       boxSizing: 'border-box',
       top: 0,
-    }}>
+    }}
+    >
       <H2 style={{ color: 'white', position: 'absolute', bottom: 0, textAlign: 'center' }}>
         {title}
       </H2>
