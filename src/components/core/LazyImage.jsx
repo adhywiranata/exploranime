@@ -5,7 +5,11 @@ import { ItemCoverLoading } from '../animes/Item/style';
 
 type Props = {
   src: string,
-  style: any,
+  style: ?any,
+};
+
+type State = {
+  imgFinishedLoading: boolean,
 };
 
 export default class extends React.Component {
@@ -18,9 +22,13 @@ export default class extends React.Component {
     this.finishLoadImage = this.finishLoadImage.bind(this);
   }
 
+  state: State;
+
   componentDidMount() {
     this.img.addEventListener('load', this.finishLoadImage);
   }
+
+  finishLoadImage: () => void;
 
   finishLoadImage() {
     if (this.img) {
@@ -29,6 +37,7 @@ export default class extends React.Component {
   }
 
   props: Props;
+  img: any;
 
   render() {
     const { src, style } = this.props;

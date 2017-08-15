@@ -11,6 +11,8 @@ import {
   FETCH_ANIME_CHARACTER_DETAILS_FAILURE as FETCH_CHARACTERS_DETAILS_FAILURE,
 } from '../actions/constants';
 
+import type { ActionType } from '../types/reduxTypes';
+
 const initialState = fromJS({
   charactersData: [],
   isFetching: false,
@@ -25,7 +27,7 @@ const fetchCharactersSuccess = (state, characters) => state
   .set('isFetching', false);
 const fetchCharactersFailure = state => state.set('isError', true);
 
-const fetchCharacterDetailsLoading = (state, characterId) => {
+const fetchCharacterDetailsLoading = (state: any, characterId: any) => {
   const characters = state.get('charactersData').toJS();
   const charactersIds = characters.map(chara => chara.id);
   const characterToUpdateIndex = charactersIds.indexOf(characterId);
@@ -33,7 +35,10 @@ const fetchCharacterDetailsLoading = (state, characterId) => {
   return state.set('charactersData', fromJS(characters));
 };
 
-const fetchCharacterDetailsSuccess = (state, { characterId, character }) => {
+const fetchCharacterDetailsSuccess = (
+  state: any,
+  { characterId, character }: { characterId: number, character: any},
+) => {
   // const characters = state.get('charactersData').toJS();
   // const charactersIds = characters.map(chara => chara.id);
   // const characterToUpdateIndex = charactersIds.indexOf(characterId);
@@ -51,7 +56,7 @@ const fetchCharacterDetailsSuccess = (state, { characterId, character }) => {
   return state.set('charactersData', fromJS(characters));
 };
 
-export default (state = initialState, action) => {
+export default (state: any = initialState, action: ActionType) => {
   switch (action.type) {
     case FETCH_CHARACTERS_LOADING: return fetchCharactersLoading(state);
     case FETCH_CHARACTERS_SUCCESS: return fetchCharactersSuccess(state, action.payload);
@@ -65,10 +70,10 @@ export default (state = initialState, action) => {
   }
 };
 
-export const getCharacters = state => state.get('charactersData').toJS();
-export const getFetchingStatus = state => state.get('isFetching');
+export const getCharacters = (state: any) => state.get('charactersData').toJS();
+export const getFetchingStatus = (state: any) => state.get('isFetching');
 
-export const getCharacterDetails = (state, charId) => {
+export const getCharacterDetails = (state: any, charId: any) => {
   const char = state.get('charactersData').toJS().filter(character => character.id === charId)[0];
   if (char.character) {
     if (char.character.attributes.image === null) {
@@ -82,7 +87,7 @@ export const getCharacterDetails = (state, charId) => {
   return null;
 };
 
-export const getCharacterFetchingStatus = (state, charId) => {
+export const getCharacterFetchingStatus = (state: any, charId: number) => {
   const char = state.get('charactersData').toJS().filter(character => character.id === charId)[0];
   if (char.isFetching) {
     return char.isFetching;

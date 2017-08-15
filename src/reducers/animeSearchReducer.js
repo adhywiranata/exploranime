@@ -9,17 +9,19 @@ import {
   FETCH_ANIMES_BY_KEYWORD_FAILURE,
 } from '../actions/constants';
 
+import type { ActionType } from '../types/reduxTypes';
+
 const initialState = fromJS({
   searchResultsData: [],
   searchTerm: '',
   isFetching: false,
 });
 
-const setSearchTerm = (state, searchTerm) => state.set('searchTerm', searchTerm).set('isFetching', true);
-const resetSearchTerm = state => state.set('searchTerm', '').set('isFetching', false);
-const fetchAnimesLoading = state => state.set('isFetching', true);
+const setSearchTerm = (state: any, searchTerm: string) => state.set('searchTerm', searchTerm).set('isFetching', true);
+const resetSearchTerm = (state: any) => state.set('searchTerm', '').set('isFetching', false);
+const fetchAnimesLoading = (state: any) => state.set('isFetching', true);
 
-const fetchAnimesSuccess = (state, results) => {
+const fetchAnimesSuccess = (state: any, results: any) => {
   const searchResults = results.map(anime => ({
     id: anime.id,
     title: anime.attributes.canonicalTitle,
@@ -30,9 +32,10 @@ const fetchAnimesSuccess = (state, results) => {
   .set('isFetching', false);
 };
 
-const fetchAnimesFailure = state => state;
+const fetchAnimesFailure = (state: any) => state;
 
-export default (state: any = initialState, { type, payload }: { type: string, payload: any }) => {
+export default (state: any = initialState, action: ActionType) => {
+  const { type, payload } = action;
   switch (type) {
     case SET_ANIME_SEARCH_TERM: return setSearchTerm(state, payload);
     case RESET_ANIME_SEARCH_TERM: return resetSearchTerm(state);

@@ -2,7 +2,8 @@
 import { fromJS } from 'immutable';
 
 import { FETCH_ANIMES_LOADING, FETCH_ANIMES_SUCCESS } from '../actions/constants';
-import type { AnimeStateType, ActionCreatorType } from '../types/animeTypes';
+import type { AnimeStateType } from '../types/animeTypes';
+import type { ActionType } from '../types/reduxTypes';
 
 const initialState = fromJS({
   animesData: [],
@@ -10,8 +11,8 @@ const initialState = fromJS({
   isFetching: false,
 });
 
-const fetchAnimesLoading = state => state.set('isFetching', true);
-const fetchAnimesSuccess = (state, animesData) => {
+const fetchAnimesLoading = (state: any) => state.set('isFetching', true);
+const fetchAnimesSuccess = (state: any, animesData: any) => {
   const newAnimesData = state.get('animesData').concat(fromJS(animesData.data));
   const newDataCursor = state.get('dataCursor') + 10;
   return state
@@ -22,7 +23,7 @@ const fetchAnimesSuccess = (state, animesData) => {
 
 export default (
   state: ?AnimeStateType = initialState,
-  action: ActionCreatorType,
+  action: ActionType,
 ): ?AnimeStateType => {
   switch (action.type) {
     case FETCH_ANIMES_LOADING: return fetchAnimesLoading(state);

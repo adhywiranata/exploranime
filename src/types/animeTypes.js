@@ -11,7 +11,3 @@ export type AnimeStateType = {
   animesData: Anime[],
   isFetching: boolean,
 };
-
-export type ActionCreatorType = {
-  type: string,
-};

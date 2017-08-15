@@ -36,6 +36,7 @@ export default connect(
     }
 
     props: Props;
+    handleScroll: () => void;
 
     handleScroll() {
       const { isFetching, fetchAnimes, dataCursor } = this.props;
