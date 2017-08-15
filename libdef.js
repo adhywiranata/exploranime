@@ -11,3 +11,4 @@ declare module 'history/createBrowserHistory' { declare var exports: any }
 declare module 'glamor' { declare var exports: any }
 declare module 'glamorous' { declare var exports: any }
 declare module 'fontfaceobserver' { declare var exports: any }
+declare module 'react-code-split-component' { declare var exports: any }

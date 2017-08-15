@@ -47,6 +47,9 @@ export default class extends Component {
   }
 
   state: State;
+  toggleNavbar: () => void;
+  toggleSearch: () => void;
+  handleSearchResultLink: () => void;
 
   toggleNavbar() {
     this.setState({ isNavbarActive: !this.state.isNavbarActive });
