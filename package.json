@@ -13,8 +13,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "flow-bin": "^0.50.0",
-    "react-scripts": "1.0.10",
-    "react-snapshot": "^1.1.0"
+    "react-scripts": "1.0.10"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -36,7 +35,8 @@
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.15.6",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "react-snapshot": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
