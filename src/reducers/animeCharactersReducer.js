@@ -1,6 +1,6 @@
 // @flow
 import { fromJS } from 'immutable';
-import { createSelector } from 'reselect';
+// import { createSelector } from 'reselect';
 
 import {
   FETCH_ANIMES_CHARACTERS_BY_ANIME_LOADING as FETCH_CHARACTERS_LOADING,
@@ -43,7 +43,11 @@ const fetchCharacterDetailsSuccess = (state, { characterId, character }) => {
   const charactersIds = characters.map(chara => chara.id);
   const characterToUpdateIndex = charactersIds.indexOf(characterId);
   // console.log(character);
-  characters[characterToUpdateIndex] = { ...characters[characterToUpdateIndex], isFetching: false, character };
+  characters[characterToUpdateIndex] = {
+    ...characters[characterToUpdateIndex],
+    isFetching: false,
+    character,
+  };
   return state.set('charactersData', fromJS(characters));
 };
 
@@ -52,8 +56,10 @@ export default (state = initialState, action) => {
     case FETCH_CHARACTERS_LOADING: return fetchCharactersLoading(state);
     case FETCH_CHARACTERS_SUCCESS: return fetchCharactersSuccess(state, action.payload);
     case FETCH_CHARACTERS_FAILURE: return fetchCharactersFailure(state);
-    case FETCH_CHARACTERS_DETAILS_LOADING: return fetchCharacterDetailsLoading(state, action.payload);
-    case FETCH_CHARACTERS_DETAILS_SUCCESS: return fetchCharacterDetailsSuccess(state, action.payload);
+    case FETCH_CHARACTERS_DETAILS_LOADING:
+      return fetchCharacterDetailsLoading(state, action.payload);
+    case FETCH_CHARACTERS_DETAILS_SUCCESS:
+      return fetchCharacterDetailsSuccess(state, action.payload);
     case FETCH_CHARACTERS_DETAILS_FAILURE: return state;
     default: return state;
   }
