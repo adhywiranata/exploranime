@@ -5,9 +5,11 @@ import { H3 } from '../../core/TextHeadings';
 import LazyImage from '../../core/LazyImage';
 import {
   DetailWrapper,
+  DetailUpper,
   DetailSectionWrapper,
   DetailContentWrapper,
   DetailContent,
+  DetailCoverImage,
 } from './styles';
 
 import CharactersSection from './sections/Characters';
@@ -21,15 +23,23 @@ export default ({ anime }: Props): React$Element<any> => (
   <div>
     { anime.attributes && (
       <DetailWrapper>
-        <div style={{ textAlign: 'center', width: '50%' }}>
-          <LazyImage src={anime.attributes.posterImage.small} style={{ height: 220 }} />
-        </div>
 
         <DetailSectionWrapper>
-          <H3>Summary</H3>
-          <DetailContent>
-            {anime.attributes.synopsis}
-          </DetailContent>
+          <DetailUpper>
+            <DetailCoverImage>
+              <LazyImage
+                src={anime.attributes.posterImage.small}
+                style={{ width: 200, height: 320 }}
+              />
+            </DetailCoverImage>
+
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: 30, paddingTop: 0, boxSizing: 'border-box' }}>
+              <H3>Summary</H3>
+              <DetailContent>
+                {anime.attributes.synopsis}
+              </DetailContent>
+            </div>
+          </DetailUpper>
         </DetailSectionWrapper>
 
         <CharactersVideo />

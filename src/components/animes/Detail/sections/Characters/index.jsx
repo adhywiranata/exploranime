@@ -24,7 +24,7 @@ type Props = {
 const Characters = ({ characters, isFetching }: Props) => (
   <DetailSectionWrapper>
     <H3>Characters</H3>
-    <DetailContentWrapper style={{ flexDirection: 'column' }}>
+    <DetailContentWrapper>
       {isFetching && <CharacterLoading />}
       {!isFetching && characters.map(character => (
         <CharacterContainer key={character.id} character={character} />

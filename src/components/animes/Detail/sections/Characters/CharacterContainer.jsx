@@ -11,16 +11,18 @@ import {
   getCharacterFetchingStatus,
 } from '../../../../../reducers/animeCharactersReducer';
 
+import { CharacterItem } from '../../styles';
+
 type Props = {
   characterData: any,
   isFetching: any,
 };
 
 const CharacterContainer = ({ characterData, isFetching }: Props) => (
-  <div>
+  <CharacterItem>
     {isFetching && <CharacterLoading />}
     {!isFetching && characterData !== null && <Character {...characterData.attributes} />}
-  </div>
+  </CharacterItem>
 );
 
 const mapStateToProps = (state, ownProps) => ({
